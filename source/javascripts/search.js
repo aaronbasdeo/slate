@@ -188,7 +188,7 @@ $(document).ready(function() {
 		if (title == undefined) {
 			searchClass.append("<p class='no-result-message'>No filtered results found for " + "'" + input + "'" + "</p>");
 		}
-		if (title.includes("AppWise") || title.includes("AppInsights") || title.includes("AppMarket") || title.includes("AppBilling") || title.includes("AppReseller")) {
+		if (title.includes("AppWise API Reference") || title.includes("AppInsights API Reference") || title.includes("AppMarket API Reference") || title.includes("AppBilling API Reference") || title.includes("AppReseller API Reference")) {
 			title = trimApiTitles(title);
 		}
 		return title;
