@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get install -yq ruby ruby-dev build-essential libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip git nodejs \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
-RUN gem install --no-ri --no-rdoc bundler
+RUN gem install --no-document bundler
 
 EXPOSE 4567
 
