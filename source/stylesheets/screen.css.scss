@@ -191,7 +191,7 @@ html, body {
 .subnav-li {
   padding-left: 0 !important;
   padding-right: 0 !important;
-  width: 120px !important;
+  width: 90px !important;
   text-align: center !important;
 }
 
@@ -239,7 +239,7 @@ html, body {
   color: #c2c2c2;
   text-align: left;
   position: absolute;
-  width: 240px;
+  width: 200px;
   left: 65px;
   top: 60px;
   z-index: 5;
@@ -312,7 +312,7 @@ input.input-search:focus {
 
 ///// secondary nav styling
 
-.appmarket_secondary_nav {
+.iam_secondary_nav {
   display: none;
 }
 
@@ -402,7 +402,7 @@ span.black {
 // Different Left Nav And Second Nav Styling for Different API Docs.
 ////////////////////////////////////////////////////////////////////////////////
 
-.appmarket {
+.iam {
   & .toc-link {
     background-color: #009abf;
   }
@@ -441,7 +441,7 @@ span.black {
     background: url("../images/AppMarket.svg") center no-repeat;
   }
 
-  & .appmarket_secondary_nav {
+  & .iam_secondary_nav {
     display: block;
   }
 }

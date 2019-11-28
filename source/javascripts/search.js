@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	var container = " ";
+	var container = ' ';
 	var radioClicked = 0;
 	var showFiltersClick = 1;
 	var searchClass = $('.search-result-title');
@@ -9,7 +9,7 @@ $(document).ready(function() {
 		all: false,
 		api: false,
 		documentation: false
-	}
+	};
 	var checkbox_Click = {
 		market: false,
 		billing: false,
@@ -17,11 +17,11 @@ $(document).ready(function() {
 		reseller: false,
 		insights: false,
 		wise: false
-	}
+	};
 	var sort_Click = {
 		new: false,
 		old: false
-	}
+	};
 	getUrlParameter();
 	var query = getUrlParameter('search');
 	searchOnPageLoad(query);
@@ -32,7 +32,7 @@ $(document).ready(function() {
 		addClassToSearchBar(input);
 
 		if (e.keyCode == 13 && input.length > 0) {
-			window.location.href = "searchPage.html?search=" + input;
+			window.location.href = 'searchPage.html?search=' + input;
 		}
 	});
 
@@ -42,23 +42,23 @@ $(document).ready(function() {
 		var api = 'https://appwise.appdirect.com/api/v2/marketplaces/marketplace.appdirect.com/index/search?format=json&q=';
 		var url = api + input + '&page_size=1000&marketplace_sections=DOCUMENTATION';
 
-		var index = input.indexOf("sort:");
+		var index = input.indexOf('sort:');
 		if (index >= 0) {
-			var searchArr = input.split(" sort:");
+			var searchArr = input.split(' sort:');
 			searchArr = searchArr.slice(0, searchArr.length - 1);
-			input = searchArr.join(" ");
+			input = searchArr.join(' ');
 
 			if (localStorage.getItem('sort') === 'new') {
-				$(".index_new").attr('checked', 'checked');
+				$('.index_new').attr('checked', 'checked');
 			} else if (localStorage.getItem('sort') === 'old') {
-				$(".index_old").attr('checked', 'checked');
+				$('.index_old').attr('checked', 'checked');
 			}
 		} else {
 			localStorage.setItem('store', 'fail');
 			localStorage.clear();
 		}
 
-		$('html head').find('title').text(input + " - AppDirect Search");
+		$('html head').find('title').text(input + ' - AppDirect Search');
 
 		addClassToSearchBar(input);
 
@@ -79,10 +79,10 @@ $(document).ready(function() {
 					showResultToUser(getUrl, trimedTitle, desc);
 				}
 			} else {
-				searchClass.append("<p class='no-result-message'>No results found for " + "'" + input + "'" + "</p>");
+				searchClass.append('<p class=\'no-result-message\'>No results found for ' + '\'' + input + '\'' + '</p>');
 			}
 			highlightKeyword(input);
-			$('.search-heading').append("Search Results for " + "'" + input + "'");
+			$('.search-heading').append('Search Results for ' + '\'' + input + '\'');
 			$('.search-results').css('display', 'flex');
 			$('.search-image').css('display', 'none');
 			if ($(window).width() <= responsiveBreakPoint) {
@@ -94,21 +94,21 @@ $(document).ready(function() {
 
 				if (localStorage.getItem('radio') === 'all') {
 					radioClicked = 1;
-					$(".index_All").prop('checked', true);
+					$('.index_All').prop('checked', true);
 					setTrueForCurrentCheck('all');
 					showContentFilterResult();
 					backToSearchResults();
 				}
 				if (localStorage.getItem('radio') === 'api') {
 					radioClicked = 1;
-					$(".index_api").prop('checked', true);
+					$('.index_api').prop('checked', true);
 					setTrueForCurrentCheck('api');
 					showContentFilterResult();
 					backToSearchResults();
 				}
 				if (localStorage.getItem('radio') === 'documentation') {
 					radioClicked = 1;
-					$(".index_documentation").prop('checked', true);
+					$('.index_documentation').prop('checked', true);
 					setTrueForCurrentCheck('documentation');
 					showContentFilterResult();
 					backToSearchResults();
@@ -117,52 +117,52 @@ $(document).ready(function() {
 					if ($(window).width() > responsiveBreakPoint) {
 						$('#AppMarket').prop('checked', true);
 					} else {
-						$("#AppMarket_Mobile").prop('checked', true);
+						$('#AppMarket_Mobile').prop('checked', true);
 					}
 					checkbox_Click['market'] = true;
 					showProductFilterResult();
 				}
 				if (localStorage.getItem('checkbox_billing') === 'billing') {
 					if ($(window).width() > responsiveBreakPoint) {
-						$("#AppBilling").prop('checked', true);
+						$('#AppBilling').prop('checked', true);
 					} else {
-						$("#AppBilling_Mobile").prop('checked', true);
+						$('#AppBilling_Mobile').prop('checked', true);
 					}
 					checkbox_Click['billing'] = true;
 					showProductFilterResult();
 				}
 				if (localStorage.getItem('checkbox_distribution') === 'distribution') {
 					if ($(window).width() > responsiveBreakPoint) {
-						$("#AppDistribution").prop('checked', true);
+						$('#AppDistribution').prop('checked', true);
 					} else {
-						$("#AppDistribution_Mobile").prop('checked', true);
+						$('#AppDistribution_Mobile').prop('checked', true);
 					}
 					checkbox_Click['distribution'] = true;
 					showProductFilterResult();
 				}
 				if (localStorage.getItem('checkbox_reseller') === 'reseller') {
 					if ($(window).width() > responsiveBreakPoint) {
-						$("#AppReseller").prop('checked', true);
+						$('#AppReseller').prop('checked', true);
 					} else {
-						$("#AppReseller_Mobile").prop('checked', true);
+						$('#AppReseller_Mobile').prop('checked', true);
 					}
 					checkbox_Click['reseller'] = true;
 					showProductFilterResult();
 				}
 				if (localStorage.getItem('checkbox_insights') === 'insights') {
 					if ($(window).width() > responsiveBreakPoint) {
-						$("#AppInsights").prop('checked', true);
+						$('#AppInsights').prop('checked', true);
 					} else {
-						$("#AppInsights_Mobile").prop('checked', true);
+						$('#AppInsights_Mobile').prop('checked', true);
 					}
 					checkbox_Click['insights'] = true;
 					showProductFilterResult();
 				}
 				if (localStorage.getItem('checkbox_wise') === 'wise') {
 					if ($(window).width() > responsiveBreakPoint) {
-						$("#AppWise").prop('checked', true);
+						$('#AppWise').prop('checked', true);
 					} else {
-						$("#AppWise_Mobile").prop('checked', true);
+						$('#AppWise_Mobile').prop('checked', true);
 					}
 					checkbox_Click['wise'] = true;
 					showProductFilterResult();
@@ -181,14 +181,14 @@ $(document).ready(function() {
 
 	function showResultToUser(getUrl, trimedTitle, desc) {
 		filterTitleBaseOnUrl(getUrl);
-		searchClass.append("<a class='search-title-append' href = " + getUrl + " target = '_blank'>" + "<p class='search-title-append-content'>" + trimedTitle + "</p>" + "</a>" + "<p class='search-highlight'>" + desc + "</p>");
+		searchClass.append('<a class=\'search-title-append\' href = ' + getUrl + ' \'target\' = \'_blank\'>' + '<p class=\'search-title-append-content\'>' + trimedTitle + '</p>' + '</a>' + '<p class=\'search-highlight\'>' + desc + '</p>');
 	}
 
 	function getTrimedTitles(title, input) {
 		if (title == undefined) {
-			searchClass.append("<p class='no-result-message'>No filtered results found for " + "'" + input + "'" + "</p>");
+			searchClass.append('<p class=\'no-result-message\'>No filtered results found for ' + '\'' + input + '\'' + '</p>');
 		}
-		if (title.includes("AppWise API Reference") || title.includes("AppInsights API Reference") || title.includes("AppMarket API Reference") || title.includes("AppBilling API Reference") || title.includes("AppReseller API Reference")) {
+		if (title.includes('AppWise API Reference') || title.includes('AppInsights API Reference') || title.includes('AppMarket API Reference') || title.includes('AppBilling API Reference') || title.includes('AppReseller API Reference')) {
 			title = trimApiTitles(title);
 		}
 		return title;
@@ -216,26 +216,26 @@ $(document).ready(function() {
 		$('.mobile-filters').css('left', '1074px');
 		$('.search-heading, .show-filters').css('display', 'none');
 		$('.search-results').css('border-top', '0');
-		var $inner = $(".mobile-filters");
+		var $inner = $('.mobile-filters');
 		var extraWidth = $('.search-wrapper').width();
 
 		if ($inner.position().left == 0) {
 			$inner.animate({
-				left: "+" + extraWidth
+				left: '+' + extraWidth
 			}, 400);
 		} else {
 			$inner.animate({
-				left: "25px"
+				left: '25px'
 			}, 400);
 		}
 
 		if (showFiltersClick) {
 			$('.search-result-title').css('display', 'none');
-			$('.search-wrapper').css('height', '650px')
+			$('.search-wrapper').css('height', '650px');
 			showFiltersClick = 0;
 		} else {
 			$('.search-result-title').css('display', 'block');
-			$('.search-wrapper').css('height', 'unset')
+			$('.search-wrapper').css('height', 'unset');
 			showFiltersClick = 1;
 		}
 	});
@@ -272,11 +272,11 @@ $(document).ready(function() {
 				var getUrl = container[i].url;
 				var desc = container[i].description.replace(new RegExp('\r?\n', 'g'), '<br />');
 
-				if (getUrl.indexOf("/api/") >= 0 && radio_Click['api'] === true) {
+				if (getUrl.indexOf('/api/') >= 0 && radio_Click['api'] === true) {
 					showResultToUser(getUrl, trimedTitle, desc);
 					noResultFoundCheck = 1;
 
-				} else if (getUrl.indexOf("/api/") == -1 && radio_Click['documentation'] === true) {
+				} else if (getUrl.indexOf('/api/') == -1 && radio_Click['documentation'] === true) {
 					showResultToUser(getUrl, trimedTitle, desc);
 					noResultFoundCheck = 1;
 				}
@@ -284,9 +284,9 @@ $(document).ready(function() {
 			highlightKeyword(input);
 		}
 		if (noResultFoundCheck == 0) {
-			searchClass.append("<p class='no-result-message'>No filtered results found for " + "'" + input + "'" + "</p>");
+			searchClass.append('<p class=\'no-result-message\'>No filtered results found for ' + '\'' + input + '\'' + '</p>');
 		}
-		if ($("[name='product']:checked").length) {
+		if ($('[name=\'product\']:checked').length) {
 			showProductFilterResult();
 		}
 	}
@@ -336,37 +336,37 @@ $(document).ready(function() {
 			var getUrl = container[i].url;
 			var desc = container[i].description.replace(new RegExp('\r?\n', 'g'), '<br />');
 
-			if ((getUrl.indexOf("/appmarket/") >= 0 || (getUrl.indexOf("/appmarket.html") >= 0 && (!$('.index_documentation').is(':checked')))) && checkbox_Click['market'] === true && (!$('.index_api').is(':checked'))) {
+			if ((getUrl.indexOf('/appmarket/') >= 0 || (getUrl.indexOf('/appmarket.html') >= 0 && (!$('.index_documentation').is(':checked')))) && checkbox_Click['market'] === true && (!$('.index_api').is(':checked'))) {
 				showResultToUser(getUrl, trimedTitle, desc);
 				noResultFoundCheck = 1;
-			} else if (getUrl.indexOf("/appmarket.html") >= 0 && checkbox_Click['market'] === true && ($('.index_api').is(':checked'))) {
+			} else if (getUrl.indexOf('/appmarket.html') >= 0 && checkbox_Click['market'] === true && ($('.index_api').is(':checked'))) {
 				showResultToUser(getUrl, trimedTitle, desc);
 				noResultFoundCheck = 1;
-			} else if ((getUrl.indexOf("/appbilling/") >= 0 || (getUrl.indexOf("/appbilling.html") >= 0 && (!$('.index_documentation').is(':checked')))) && checkbox_Click['billing'] === true && (!$('.index_api').is(':checked'))) {
+			} else if ((getUrl.indexOf('/appbilling/') >= 0 || (getUrl.indexOf('/appbilling.html') >= 0 && (!$('.index_documentation').is(':checked')))) && checkbox_Click['billing'] === true && (!$('.index_api').is(':checked'))) {
 				showResultToUser(getUrl, trimedTitle, desc);
 				noResultFoundCheck = 1;
-			} else if (getUrl.indexOf("/appbilling.html") >= 0 && checkbox_Click['billing'] === true && ($('.index_api').is(':checked'))) {
+			} else if (getUrl.indexOf('/appbilling.html') >= 0 && checkbox_Click['billing'] === true && ($('.index_api').is(':checked'))) {
 				showResultToUser(getUrl, trimedTitle, desc);
 				noResultFoundCheck = 1;
-			} else if (getUrl.indexOf("/appdistrib/") >= 0 && checkbox_Click['distribution'] === true && (!$('.index_api').is(':checked'))) {
+			} else if (getUrl.indexOf('/appdistrib/') >= 0 && checkbox_Click['distribution'] === true && (!$('.index_api').is(':checked'))) {
 				showResultToUser(getUrl, trimedTitle, desc);
 				noResultFoundCheck = 1;
-			} else if ((getUrl.indexOf("/appreseller/") >= 0 || (getUrl.indexOf("/appreseller.html") >= 0 && (!$('.index_documentation').is(':checked')))) && checkbox_Click['reseller'] === true && (!$('.index_api').is(':checked'))) {
+			} else if ((getUrl.indexOf('/appreseller/') >= 0 || (getUrl.indexOf('/appreseller.html') >= 0 && (!$('.index_documentation').is(':checked')))) && checkbox_Click['reseller'] === true && (!$('.index_api').is(':checked'))) {
 				showResultToUser(getUrl, trimedTitle, desc);
 				noResultFoundCheck = 1;
-			} else if (getUrl.indexOf("/appreseller.html") >= 0 && checkbox_Click['reseller'] === true && ($('.index_api').is(':checked'))) {
+			} else if (getUrl.indexOf('/appreseller.html') >= 0 && checkbox_Click['reseller'] === true && ($('.index_api').is(':checked'))) {
 				showResultToUser(getUrl, trimedTitle, desc);
 				noResultFoundCheck = 1;
-			} else if (getUrl.indexOf("/appinsights.html") >= 0 && checkbox_Click['insights'] === true && (!$('.index_documentation').is(':checked'))) {
+			} else if (getUrl.indexOf('/appinsights.html') >= 0 && checkbox_Click['insights'] === true && (!$('.index_documentation').is(':checked'))) {
 				showResultToUser(getUrl, trimedTitle, desc);
 				noResultFoundCheck = 1;
-			} else if (getUrl.indexOf("/appwise.html") >= 0 && checkbox_Click['wise'] === true && (!$('.index_documentation').is(':checked'))) {
+			} else if (getUrl.indexOf('/appwise.html') >= 0 && checkbox_Click['wise'] === true && (!$('.index_documentation').is(':checked'))) {
 				showResultToUser(getUrl, trimedTitle, desc);
 				noResultFoundCheck = 1;
 			}
 		}
 		if (noResultFoundCheck == 0) {
-			searchClass.append("<p class='no-result-message'>No filtered results found for " + "'" + input + "'" + "</p>");
+			searchClass.append('<p class=\'no-result-message\'>No filtered results found for ' + '\'' + input + '\'' + '</p>');
 		}
 
 		highlightKeyword(input);
@@ -381,7 +381,7 @@ $(document).ready(function() {
 
 	$('.index_appmarket').click(function() {
 		checkbox_Click['market'] = !checkbox_Click['market'];
-		if ($('.index_appmarket').is(":checked") === true) {
+		if ($('.index_appmarket').is(':checked') === true) {
 			localStorage.setItem('checkbox_market', 'market');
 		} else {
 			localStorage.setItem('checkbox_market', ' ');
@@ -391,7 +391,7 @@ $(document).ready(function() {
 
 	$('.index_appbilling').click(function() {
 		checkbox_Click['billing'] = !checkbox_Click['billing'];
-		if ($('.index_appbilling').is(":checked") === true) {
+		if ($('.index_appbilling').is(':checked') === true) {
 			localStorage.setItem('checkbox_billing', 'billing');
 		} else {
 			localStorage.setItem('checkbox_billing', ' ');
@@ -401,7 +401,7 @@ $(document).ready(function() {
 
 	$('.index_appdistribution').click(function() {
 		checkbox_Click['distribution'] = !checkbox_Click['distribution'];
-		if ($('.index_appdistribution').is(":checked") === true) {
+		if ($('.index_appdistribution').is(':checked') === true) {
 			localStorage.setItem('checkbox_distribution', 'distribution');
 		} else {
 			localStorage.setItem('checkbox_distribution', ' ');
@@ -411,7 +411,7 @@ $(document).ready(function() {
 
 	$('.index_appreseller').click(function() {
 		checkbox_Click['reseller'] = !checkbox_Click['reseller'];
-		if ($('.index_appreseller').is(":checked") === true) {
+		if ($('.index_appreseller').is(':checked') === true) {
 			localStorage.setItem('checkbox_reseller', 'reseller');
 		} else {
 			localStorage.setItem('checkbox_reseller', ' ');
@@ -421,7 +421,7 @@ $(document).ready(function() {
 
 	$('.index_appinsights').click(function() {
 		checkbox_Click['insights'] = !checkbox_Click['insights'];
-		if ($('.index_appinsights').is(":checked") === true) {
+		if ($('.index_appinsights').is(':checked') === true) {
 			localStorage.setItem('checkbox_insights', 'insights');
 		} else {
 			localStorage.setItem('checkbox_insights', ' ');
@@ -431,7 +431,7 @@ $(document).ready(function() {
 
 	$('.index_appwise').click(function() {
 		checkbox_Click['wise'] = !checkbox_Click['wise'];
-		if ($('.index_appwise').is(":checked") === true) {
+		if ($('.index_appwise').is(':checked') === true) {
 			localStorage.setItem('checkbox_wise', 'wise');
 		} else {
 			localStorage.setItem('checkbox_wise', ' ');
@@ -441,21 +441,21 @@ $(document).ready(function() {
 
 	function refireSearchQuery(query) {
 		var input = query;
-		var index = input.indexOf("sort:");
+		var index = input.indexOf('sort:');
 		var actualQuery;
 
 		if (index != -1) {
-			var searchArr = input.split(" sort:");
+			var searchArr = input.split(' sort:');
 			searchArr = searchArr.slice(0, searchArr.length - 1);
-			actualQuery = searchArr.join(" ");
+			actualQuery = searchArr.join(' ');
 		} else {
 			actualQuery = input;
 		}
 
 		if (sort_Click['new'] === true) {
-			window.location.href = "searchPage.html?search=" + actualQuery + ' ' + 'sort:date desc';
+			window.location.href = 'searchPage.html?search=' + actualQuery + ' ' + 'sort:date desc';
 		} else if (sort_Click['old'] === true) {
-			window.location.href = "searchPage.html?search=" + actualQuery + ' ' + 'sort:date asc';
+			window.location.href = 'searchPage.html?search=' + actualQuery + ' ' + 'sort:date asc';
 		}
 	}
 
@@ -483,43 +483,43 @@ $(document).ready(function() {
 	});
 
 	function filterTitleBaseOnUrl(getUrl) {
-		if (getUrl.indexOf("/appmarket/") >= 0) {
-			searchClass.append("<p class='topic-title'>AppMarket Online Help</p>");
-		} else if (getUrl.indexOf("/appbilling/") >= 0) {
-			searchClass.append("<p class='topic-title'>AppBilling Online Help</p>");
-		} else if (getUrl.indexOf("/appdistrib/") >= 0) {
-			searchClass.append("<p class='topic-title'>AppDistribution Online Help</p>");
-		} else if (getUrl.indexOf("/appreseller/") >= 0) {
-			searchClass.append("<p class='topic-title'>AppReseller Online Help</p>");
-		} else if (getUrl.indexOf("/appwise/") >= 0) {
-			searchClass.append("<p class='topic-title'>AppWise Online Help</p>");
-		} else if (getUrl.indexOf("/appinsights/") >= 0) {
-			searchClass.append("<p class='topic-title'>AppInsights Online Help</p>");
-		} else if (getUrl.indexOf("/api/appmarket.html") >= 0) {
-			searchClass.append("<p class='topic-title'>AppMarket API Reference</p>");
-		} else if (getUrl.indexOf("/api/appbilling.html") >= 0) {
-			searchClass.append("<p class='topic-title'>AppBilling API Reference</p>");
-		} else if (getUrl.indexOf("/api/appreseller.html") >= 0) {
-			searchClass.append("<p class='topic-title'>AppReseller API Reference</p>");
-		} else if (getUrl.indexOf("/api/appinsights.html") >= 0) {
-			searchClass.append("<p class='topic-title'>AppInsights API Reference</p>");
-		} else if (getUrl.indexOf("/api/appwise.html") >= 0) {
-			searchClass.append("<p class='topic-title'>AppWise API Reference</p>");
+		if (getUrl.indexOf('/appmarket/') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppMarket Online Help</p>');
+		} else if (getUrl.indexOf('/appbilling/') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppBilling Online Help</p>');
+		} else if (getUrl.indexOf('/appdistrib/') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppDistribution Online Help</p>');
+		} else if (getUrl.indexOf('/appreseller/') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppReseller Online Help</p>');
+		} else if (getUrl.indexOf('/appwise/') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppWise Online Help</p>');
+		} else if (getUrl.indexOf('/appinsights/') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppInsights Online Help</p>');
+		} else if (getUrl.indexOf('/api/appmarket.html') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppMarket API Reference</p>');
+		} else if (getUrl.indexOf('/api/appbilling.html') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppBilling API Reference</p>');
+		} else if (getUrl.indexOf('/api/appreseller.html') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppReseller API Reference</p>');
+		} else if (getUrl.indexOf('/api/appinsights.html') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppInsights API Reference</p>');
+		} else if (getUrl.indexOf('/api/appwise.html') >= 0) {
+			searchClass.append('<p class=\'topic-title\'>AppWise API Reference</p>');
 		}
 	}
 
 	function highlightKeyword(input) {
-		var index = input.indexOf("sort:");
+		var index = input.indexOf('sort:');
 		if (index >= 0) {
 
-			var searchArr = input.split(" sort:");
+			var searchArr = input.split(' sort:');
 			searchArr = searchArr.slice(0, searchArr.length - 1);
-			input = searchArr.join(" ");
+			input = searchArr.join(' ');
 		}
 
-		$(".search-highlight").mark(input, {
-			"element": "span",
-			"className": "highlight-search"
+		$('.search-highlight').mark(input, {
+			'element': 'span',
+			'className': 'highlight-search'
 		});
 	}
 
@@ -539,21 +539,21 @@ $(document).ready(function() {
 	}
 
 	function trimApiTitles(title) {
-		var api_title = " ";
-		api_title = title.split("-");
-		title = api_title.slice(1, api_title.length).join("-");
+		var api_title = ' ';
+		api_title = title.split('-');
+		title = api_title.slice(1, api_title.length).join('-');
 		return title;
 	}
 
 	$('.clear-all-filters, .clear-all-filters-mobile').click(function() {
 		var input = $('#search-val').val();
-		var index = input.indexOf("sort:");
+		var index = input.indexOf('sort:');
 
 		if (index >= 0) {
-			var searchArr = input.split(" sort:");
+			var searchArr = input.split(' sort:');
 			searchArr = searchArr.slice(0, searchArr.length - 1);
-			input = searchArr.join(" ");
+			input = searchArr.join(' ');
 		}
-		window.location.href = "searchPage.html?search=" + input;
+		window.location.href = 'searchPage.html?search=' + input;
 	});
 });

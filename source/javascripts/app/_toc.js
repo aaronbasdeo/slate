@@ -145,7 +145,7 @@
 		})
 
 		function managePageScroll() {
-			if ($('body').hasClass('appmarket')) {
+			if ($('body').hasClass('iam')) {
 				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('appmarket_second_nav').offsetHeight + 2
 
 			} else if ($('body').hasClass('appbilling')) {

@@ -38,9 +38,9 @@ under the License.
     <% else %>
       <%= javascript_include_tag  "all_nosearch" %>
     <% end %>
-  <script defer type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5a5c5a8c72b70f00137efecc&product=sticky-share-buttons'>
+  <script defer type='text/javascript' src='//https://platform-api.sharethis.com/js/sharethis.js#property=5a5c5a8c72b70f00137efecc&product=sticky-share-buttons'>
   </script>
-  	<script type='text/javascript'>
+  	<script defer type='text/javascript'>
   		(function() {
               var walkme = document.createElement('script');
               walkme.type = 'text/javascript';
@@ -54,7 +54,7 @@ under the License.
               };
           })();
   	</script>
- 	<script type='text/javascript'>
+ 	<script defer type='text/javascript'>
  		window.heap = window.heap || [], heap.load = function(e, t) {
              window.heap.appid = e, window.heap.config = t = t || {};
              var r = t.forceSSL || 'https:' === document.location.protocol,
@@ -109,18 +109,16 @@ under the License.
                <img src="images/appdirect-mark-light.png" class="appdirect_light_logo display_none">
                </a>
             </li>
-            <li id="hide_subnav" class="primary-header-left-ul-li subnav-li both-side-border"><a id="userguidelink_id" class="header-links userguidelink">User Guides</a>
+            <li id="hide_subnav" class="primary-header-left-ul-li subnav-li both-side-border"><a id="userguidelink_id" class="header-links userguidelink">Docs</a>
                   <ul class="subnav display_none">
-                        <li><a class="subnav-links" href="/appmarket/appmarket.html">AppMarket</a>
-                        </li>
-                        <li><a class="subnav-links" href="/appreseller/appreseller.html">AppReseller</a>
-                        </li>
-                        <li><a class="subnav-links" href="/appbilling/appbilling.html">AppBilling</a>
-                        </li>
-                        <li><a class="subnav-links" href="/appdistrib/appdistribution.html">AppDistribution</a>
-                        </li>
-                        <li><a class="subnav-links" href="/appinsights/appinsights.html">AppInsights</a>
-                        </li>
+                    <li><a class='subnav-links' href='/platform/manageThePlatform.html'>Platform</a>
+                    </li>
+                    <li><a class='subnav-links' href='/reseller/appreseller.html'>Resellers</a>
+                    </li>
+                    <li><a class='subnav-links' href='/products/createAndManageProducts.html'>Products</a>
+                    </li>
+                    <li><a class='subnav-links' href='/develop/useAppDirectAPI.html'>APIs</a>
+                    </li>
                   </ul>
             </li>
         </ul>
@@ -148,20 +146,20 @@ under the License.
       </div>
     </header>
 
-    <div class="appmarket_secondary_nav">
-            <div class="secondary_nav" id="appmarket_second_nav">
+    <div class="iam_secondary_nav">
+            <div class="secondary_nav" id="iam_second_nav">
                 <div class="secondary_nav_bold_link">
-                    APPMARKET
+                    API ONLINE
                     <span class="black">&gt;</span>
                 </div>
                 <div class="secondary_nav_links">
-                    <a href="/appmarket/Default.htm#GettingStarted/gsg-intro.htm%3FTocPath%3DGetting%2520Started%7C_____0">Getting Started</a>
+                    <a href="/api-iam/Default.htm#api-iam/api-iam.htm%3FTocPath%3DIdentity%2520and%2520Access%2520Management%2520API%7C_____0">Overview</a>
                 </div>
                 <div class="secondary_nav_links">
-                    <a href="/appmarket/Default.htm#AppManager/AM-Overview-Main.html%3FTocPath%3DApp%2520Manager%7C_____0">Documentation</a>
+                    <a href="/api-iam/Default.htm#api-iam/api-iam-guides.htm%3FTocPath%3DGuides%7C_____0">Guides</a>
                 </div>
                 <div class="secondary_nav_links api_reference">
-                    <a href="/api/appmarket.html">API Reference</a>
+                    <a href="/api/iam.html">API Reference</a>
                 </div>
             </div>
     </div>
