@@ -154,8 +154,8 @@
 			} else if ($('body').hasClass('checkout')) {
 				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('checkout_second_nav').offsetHeight + 2
 
-			} else if ($('body').hasClass('appinsights')) {
-				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('appinsights_second_nav').offsetHeight + 2
+			} else if ($('body').hasClass('platform-admin')) {
+				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('platform_second_nav').offsetHeight + 2
 
 			} else if ($('body').hasClass('appreseller')) {
 				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('appreseller_second_nav').offsetHeight + 2
