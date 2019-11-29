@@ -328,7 +328,7 @@ input.input-search:focus {
   display: none;
 }
 
-.appreseller_secondary_nav {
+.catalog_secondary_nav {
   display: none;
 }
 
@@ -578,7 +578,7 @@ span.black {
   }
 }
 
-.appreseller {
+.catalog-management {
   & .toc-link {
     background-color: #a77bca;
   }
@@ -617,7 +617,7 @@ span.black {
     background: url("../images/AppReseller.svg") center no-repeat;
   }
 
-  & .appreseller_secondary_nav {
+  & .catalog_secondary_nav {
     display: block;
   }
 }

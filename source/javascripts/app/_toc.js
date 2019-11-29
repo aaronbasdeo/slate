@@ -157,8 +157,8 @@
 			} else if ($('body').hasClass('platform-admin')) {
 				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('platform_second_nav').offsetHeight + 2
 
-			} else if ($('body').hasClass('appreseller')) {
-				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('appreseller_second_nav').offsetHeight + 2
+			} else if ($('body').hasClass('catalog-management')) {
+				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('catalog_second_nav').offsetHeight + 2
 
 			} else {
 				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - 51 + 2
