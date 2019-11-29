@@ -26,7 +26,6 @@ We have language bindings in Shell, Ruby, and Python! You can view code examples
 This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
 # Authentication
-
 > To authorize, use this code:
 
 ```ruby
@@ -94,7 +93,6 @@ const kittn = require('kittn');
 let api = kittn.authorize('meowmeowmeow');
 let kittens = api.kittens.get();
 ```
-
 > The above command returns JSON structured like this:
 
 ```json
@@ -120,7 +118,7 @@ This endpoint retrieves all kittens.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+<span class="method-get">GET</span> `http://example.com/api/kittens`
 
 ### Query Parameters
 
@@ -179,7 +177,7 @@ This endpoint retrieves a specific kitten.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+<span class="method-get">GET</span> `http://example.com/kittens/<ID>`
 
 ### URL Parameters
 
@@ -215,7 +213,7 @@ const kittn = require('kittn');
 let api = kittn.authorize('meowmeowmeow');
 let max = api.kittens.delete(2);
 ```
-
+ 
 > The above command returns JSON structured like this:
 
 ```json
@@ -229,11 +227,10 @@ This endpoint deletes a specific kitten.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+<span class="method-delete">DELETE</span> `http://example.com/kittens/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
-
