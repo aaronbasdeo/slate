@@ -148,7 +148,7 @@
 			if ($('body').hasClass('iam')) {
 				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('appmarket_second_nav').offsetHeight + 2
 
-			} else if ($('body').hasClass('appbilling')) {
+			} else if ($('body').hasClass('billing-subscription-management')) {
 				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('appbilling_second_nav').offsetHeight + 2
 
 			} else if ($('body').hasClass('appwise')) {
