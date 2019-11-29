@@ -146,13 +146,13 @@
 
 		function managePageScroll() {
 			if ($('body').hasClass('iam')) {
-				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('appmarket_second_nav').offsetHeight + 2
+				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('iam_secondary_nav').offsetHeight + 2
 
 			} else if ($('body').hasClass('billing-subscription-management')) {
-				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('appbilling_second_nav').offsetHeight + 2
+				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('sub_billing_secondary_nav').offsetHeight + 2
 
-			} else if ($('body').hasClass('appwise')) {
-				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('appwise_second_nav').offsetHeight + 2
+			} else if ($('body').hasClass('checkout')) {
+				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('checkout_second_nav').offsetHeight + 2
 
 			} else if ($('body').hasClass('appinsights')) {
 				var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('appinsights_second_nav').offsetHeight + 2

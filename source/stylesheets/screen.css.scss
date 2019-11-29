@@ -316,11 +316,11 @@ input.input-search:focus {
   display: none;
 }
 
-.appbilling_secondary_nav {
+.sub_billing_secondary_nav {
   display: none;
 }
 
-.appinsights_secondary_nav {
+.checkout_secondary_nav {
   display: none;
 }
 
@@ -490,7 +490,7 @@ span.black {
   }
 }
 
-.appwise {
+.checkout {
   & .toc-link {
     background-color: #26d07c;
   }
@@ -529,7 +529,7 @@ span.black {
     background: url("../images/AppWise.svg") center no-repeat;
   }
 
-  & .appwise_secondary_nav {
+  & .checkout_secondary_nav {
     display: block;
   }
 }
