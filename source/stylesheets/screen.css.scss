@@ -324,7 +324,7 @@ input.input-search:focus {
   display: none;
 }
 
-.appwise_secondary_nav {
+.platform_secondary_nav {
   display: none;
 }
 
@@ -534,7 +534,7 @@ span.black {
   }
 }
 
-.appinsights {
+.platform-admin {
   & .toc-link {
     background-color: #00a8df;
   }
@@ -573,7 +573,7 @@ span.black {
     background: url("../images/AppInsights.svg") center no-repeat;
   }
 
-  & .appinsights_secondary_nav {
+  & .platform_secondary_nav {
     display: block;
   }
 }
