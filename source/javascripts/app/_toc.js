@@ -163,6 +163,9 @@
             } else if ($('body').hasClass('assisted-sales')) {
                 var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('assisted_second_nav').offsetHeight + 2;
 
+            } else if ($('body').hasClass('reports-v1')) {
+                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('reports_v1_second_nav').offsetHeight + 2;
+
             } else {
                 var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - 51 + 2;
             }
