@@ -14,7 +14,7 @@ $(document).ready(function() {
 
         if (input.length > 0) {
             $('.header-search-result').addClass('search-val-hover');
-        } else if ((input.length == 0) && $('.header-search-result').hasClass('search-val-hover')) {
+        } else if ((input.length === 0) && $('.header-search-result').hasClass('search-val-hover')) {
             $('.header-search-result').removeClass('search-val-hover');
         }
 
