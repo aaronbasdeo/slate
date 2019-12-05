@@ -340,6 +340,10 @@ input.input-search:focus {
   display: none;
 }
 
+.reports_v2_secondary_nav {
+  display: none;
+}
+
 
 .secondary_nav {
   border-bottom: 1px solid #ddd;
@@ -715,6 +719,50 @@ span.black {
   }
 
   & .reports_v1_secondary_nav {
+    display: block;
+  }
+}
+
+.reports-v2 {
+  & .toc-link {
+    background-color: #a77bca;
+  }
+
+  & .toc-wrapper {
+    background-color: #a77bca;
+  }
+
+  & input.input-search {
+    background-color: #a77bca !important;
+  }
+
+  & .search-results {
+    background-color: #a77bca !important;
+  }
+
+  & .toc-link.active {
+    background-color: #62407d !important;
+  }
+
+  & .toc-link.active-parent {
+    background-color: #62407d !important;
+  }
+
+  & .toc-footer li {
+    background-color: #a77bca;
+  }
+
+  & .logo {
+    display: block;
+    padding: 18px;
+    padding-top: 58px;
+    margin: auto;
+    width: 90px;
+    height: inherit;
+    background: url("../images/AppReseller.svg") center no-repeat;
+  }
+
+  & .reports_v2_secondary_nav {
     display: block;
   }
 }
