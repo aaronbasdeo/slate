@@ -370,6 +370,15 @@ input.input-search:focus {
   margin-left: 20px;
 }
 
+.secondary_nav_bold_link a {
+  text-decoration: none;
+  color: #565656;
+}
+
+.secondary_nav_bold_link a:hover {
+  color: #333333;
+}
+
 .secondary_nav_links {
   line-height: 51px;
   font-size: 14px;
