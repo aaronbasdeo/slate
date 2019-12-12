@@ -38,6 +38,8 @@ under the License.
     <% else %>
       <%= javascript_include_tag  "all_nosearch" %>
     <% end %>
+  <script defer type="text/javascript" src="./javascripts/redirect.js"></script>
+  <script defer type="text/javascript" src="./javascripts/header.js"></script>
   <script defer type='text/javascript' src='//https://platform-api.sharethis.com/js/sharethis.js#property=5a5c5a8c72b70f00137efecc&product=sticky-share-buttons'>
   </script>
   	<script defer type='text/javascript'>
@@ -84,8 +86,6 @@ under the License.
       gtag('js', new Date());
       gtag('config', 'UA-19401247-68');
 	</script>
-  <script defer type="text/javascript" src="./javascripts/redirect.js"></script>
-  <script defer type="text/javascript" src="./javascripts/header.js"></script>
   </head>
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
     
