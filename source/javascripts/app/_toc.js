@@ -121,35 +121,42 @@
     /////////////////////////////////////////////////
 
     $(document).ready(function() {
-
         var target;
+        var responsiveBreakPoint = 930;
+
         window.onload = function(e) {
-            if ($('#toc a[href = "' + window.location.hash + '"]')) {
-                target = window.location.hash;
-                managePageScroll();
+            if ($(window).width() > responsiveBreakPoint) {
+                if ($('#toc a[href = "' + window.location.hash + '"]')) {
+                    target = window.location.hash;
+                    manageDesktopPageScroll();
+                }
             }
         };
 
         $('a[href*="#"]').on('click', function(e) {
-            target = $(this).attr('href'); //Get the target
-            managePageScroll();
-            e.preventDefault();
+            if ($(window).width() > responsiveBreakPoint) {
+                target = $(this).attr('href'); //Get the target
+                manageDesktopPageScroll();
+                e.preventDefault();
+            }
         });
 
         $('.search').change(function() {
             $('.search-results').find('a[href*="#"]').on('click', function(e) {
-                target = $(this).attr('href'); //Get the target
-                managePageScroll();
-                e.preventDefault();
+                if ($(window).width() > responsiveBreakPoint) {
+                    target = $(this).attr('href'); //Get the target
+                    manageDesktopPageScroll();
+                    e.preventDefault();
+                }
             });
         });
 
-        function managePageScroll() {
+        function manageDesktopPageScroll() {
             if ($('body').hasClass('iam')) {
-                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('iam_secondary_nav').offsetHeight + 2;
+                var scrollToPosition = $(target).offset().top - 60 - 51 + 2;
 
             } else if ($('body').hasClass('billing-subscription-management')) {
-                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('sub_billing_secondary_nav').offsetHeight + 2;
+                var scrollToPosition = $(target).offset().top - 60 - 51 + 2;
 
             } else if ($('body').hasClass('checkout')) {
                 var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('checkout_second_nav').offsetHeight + 2;
@@ -167,7 +174,7 @@
                 var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('reports_v1_second_nav').offsetHeight + 2;
 
             } else if ($('body').hasClass('reports-v2')) {
-                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('reports_v2_second_nav').offsetHeight + 2;
+                var scrollToPosition = 60 - 51 + 2;
 
             } else if ($('body').hasClass('storefront')) {
                 var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('storefront_second_nav').offsetHeight + 2;
