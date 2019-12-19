@@ -1,11 +1,11 @@
 <%#
 Copyright 2008-2013 Concur Technologies, Inc.
-Licensed under the Apache License, Version 2.0 (the "License"); you may
+Licensed under the Apache License, Version 2.0 (the 'License'); you may
 not use this file except in compliance with the License. You may obtain
 a copy of the License at
   http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+distributed under the License is distributed on an 'AS IS' BASIS, WITHOUT
 WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations
 under the License.
@@ -15,7 +15,7 @@ under the License.
 <%
   if current_page.data.includes
     current_page.data.includes.each do |include|
-      page_content += partial("includes/#{include}")
+      page_content += partial('includes/#{include}')
     end
   end
 %>
@@ -23,23 +23,23 @@ under the License.
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title><%= current_page.data.title + " - AppDirect" %></title>
-    <link rel="shortcut icon" href="https://d6r6ulbtqyuv7.cloudfront.net/wicket/resource/com.appdirect.wicket.resources.Resource/spa/themes/appdirectapp/images/favicon-ver-E524860B6D15077DC12CB7437023988E.ico" type="image/x-icon">
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+    <title><%= current_page.data.title + ' - AppDirect' %></title>
+    <link rel='shortcut icon' href='https://d6r6ulbtqyuv7.cloudfront.net/wicket/resource/com.appdirect.wicket.resources.Resource/spa/themes/appdirectapp/images/favicon-ver-E524860B6D15077DC12CB7437023988E.ico' type='image/x-icon'>
     <style>
       <%= Rouge::Themes::MonokaiSublime.render(:scope => '.highlight') %>
     </style>
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
     <% if current_page.data.search %>
-      <%= javascript_include_tag  "all" %>
+      <%= javascript_include_tag  'all' %>
     <% else %>
-      <%= javascript_include_tag  "all_nosearch" %>
+      <%= javascript_include_tag  'all_nosearch' %>
     <% end %>
-  <script defer type="text/javascript" src="./javascripts/redirect.js"></script>
-  <script defer type="text/javascript" src="./javascripts/header.js"></script>
+  <script defer type='text/javascript' src='./javascripts/redirect.js'></script>
+  <script defer type='text/javascript' src='./javascripts/header.js'></script>
   <script defer type='text/javascript' src='//https://platform-api.sharethis.com/js/sharethis.js#property=5a5c5a8c72b70f00137efecc&product=sticky-share-buttons'>
   </script>
   	<script defer type='text/javascript'>
@@ -87,30 +87,30 @@ under the License.
       gtag('config', 'UA-19401247-68');
 	</script>
   </head>
-  <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
+  <body class='<%= page_classes %>' data-languages='<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>'>
     
-    <div id = "load">
-       <div class="load_div">
-         <div class="loading_text">
+    <div id = 'load'>
+       <div class='load_div'>
+         <div class='loading_text'>
           <span>Loading...</span>
          </div>
-         <span class="adb-loading">
-          <span class="adb-loading--text"></span>
+         <span class='adb-loading'>
+          <span class='adb-loading--text'></span>
          </span>
        </div>
     </div>
 
-     <header id="header">
-      <div class="primary-header">
-        <ul class="primary-header-left-ul">
-            <li class="primary-header-left-ul-li logo-li">
-               <a href="http://dev-help2.appdirect.com/">
-               <img src="images/appdirect-mark.png" class="appdirect_dark_logo">
-               <img src="images/appdirect-mark-light.png" class="appdirect_light_logo display_none">
+     <header id='header'>
+      <div class='primary-header'>
+        <ul class='primary-header-left-ul'>
+            <li class='primary-header-left-ul-li logo-li'>
+               <a href='http://dev-help2.appdirect.com/'>
+               <img src='images/appdirect-mark.png' class='appdirect_dark_logo'>
+               <img src='images/appdirect-mark-light.png' class='appdirect_light_logo display_none'>
                </a>
             </li>
-            <li id="hide_subnav" class="primary-header-left-ul-li subnav-li both-side-border"><a id="userguidelink_id" class="header-links userguidelink">Docs</a>
-                  <ul class="subnav display_none">
+            <li id='hide_subnav' class='primary-header-left-ul-li subnav-li both-side-border'><a id='userguidelink_id' class='header-links userguidelink'>Docs</a>
+                  <ul class='subnav display_none'>
                     <li><a class='subnav-links' href='/platform/manageThePlatform.html'>Platform</a>
                     </li>
                     <li><a class='subnav-links' href='/reseller/appreseller.html'>Resellers</a>
@@ -123,225 +123,225 @@ under the License.
             </li>
         </ul>
           <div class='search-bar container-search'>
-                <a href="javascript:void(0)" id="search_menu">
-                    <img id ="search_image" class="search_image" src="./images/magnifying_glass.png">
+                <a href='javascript:void(0)' id='search_menu'>
+                    <img id ='search_image' class='search_image' src='./images/magnifying_glass.png'>
                 </a></li>
-                <input style="margin-top: 0; width: 380px;" autocomplete="off" id="search-val" class="header-search-result search-bar-width" placeholder="Search Documentation Center" type="text"/>
+                <input style='margin-top: 0; width: 380px;' autocomplete='off' id='search-val' class='header-search-result search-bar-width' placeholder='Search Documentation Center' type='text'/>
         </div>
-        <div class="header-right-div">
-          <a href="javascript:void(0)" id="hide_menu" style="height: 40px;">&#9776;</a></li>
-          <ul class="primary-header-right-ul display_none_mobile_view">
-               <li class="primary-header-right-ul-li both-side-border top-down-border training-li">
-             <a class="header-links training" href="/training/training.html">Training</a>
+        <div class='header-right-div'>
+          <a href='javascript:void(0)' id='hide_menu' style='height: 40px;'>&#9776;</a></li>
+          <ul class='primary-header-right-ul display_none_mobile_view'>
+               <li class='primary-header-right-ul-li both-side-border top-down-border training-li'>
+             <a class='header-links training' href='/training/training.html'>Training</a>
             </li>
 
-            <li class="primary-header-right-ul-li both-side-border  top-down-border helpsupport-li">
-               <a class="header-links helpsupport" href="https://docs.appdirect.com/help-support/overview">Help & Support</a>
+            <li class='primary-header-right-ul-li both-side-border  top-down-border helpsupport-li'>
+               <a class='header-links helpsupport' href='https://docs.appdirect.com/help-support/overview'>Help & Support</a>
             </li>
-            <li class="primary-header-right-ul-li right-side-border">
-               <a class="header-links login" href="https://docs.appdirect.com/login">Log In</a>
+            <li class='primary-header-right-ul-li right-side-border'>
+               <a class='header-links login' href='https://docs.appdirect.com/login'>Log In</a>
             </li>
           </ul>
         </div>
       </div>
     </header>
 
-    <div class="iam_secondary_nav">
-            <div class="secondary_nav" id="iam_second_nav">
-                <div class="secondary_nav_bold_link">
-                    <a href="/develop/useAppDirectAPI.html">API HELP</a>
-                    <span class="black">&gt;</span>
+    <div class='iam_secondary_nav'>
+            <div class='secondary_nav' id='iam_second_nav'>
+                <div class='secondary_nav_bold_link'>
+                    <a href='/develop/useAppDirectAPI.html'>API HELP</a>
+                    <span class='black'>&gt;</span>
                 </div>
-                <div class="secondary_nav_links">
-                    <a href="/api-iam/Default.htm#api-iam/api-iam.htm%3FTocPath%3DIdentity%2520and%2520Access%2520Management%2520API%7C_____0">Overview</a>
+                <div class='secondary_nav_links'>
+                    <a href='/api-iam/Default.htm#api-iam/api-iam.htm%3FTocPath%3DIdentity%2520and%2520Access%2520Management%2520API%7C_____0'>Overview</a>
                 </div>
-                <div class="secondary_nav_links">
-                    <a href="/api-iam/Default.htm#api-iam/api-iam-guides.htm%3FTocPath%3DGuides%7C_____0">Guides</a>
+                <div class='secondary_nav_links'>
+                    <a href='/api-iam/Default.htm#api-iam/api-iam-guides.htm%3FTocPath%3DGuides%7C_____0'>Guides</a>
                 </div>
-                <div class="secondary_nav_links api_reference">
-                    <a href="/api/iam.html">API Reference</a>
+                <div class='secondary_nav_links api_reference'>
+                    <a href='/api/iam.html'>API Reference</a>
                 </div>
             </div>
     </div>
 
-    <div class="sub_billing_secondary_nav">
-        <div class="secondary_nav" id="sub_billing_second_nav">
-            <div class="secondary_nav_bold_link">
-                <a href="/develop/useAppDirectAPI.html">API HELP</a>
-                <span class="black">&gt;</span>
+    <div class='sub_billing_secondary_nav'>
+        <div class='secondary_nav' id='sub_billing_second_nav'>
+            <div class='secondary_nav_bold_link'>
+                <a href='/develop/useAppDirectAPI.html'>API HELP</a>
+                <span class='black'>&gt;</span>
             </div>
-            <div class="secondary_nav_links">
-                <a href="/api-sub-billing/Default.htm#api-sub/api-sub.htm%3FTocPath%3DSubscription%2520Management%2520and%2520Billing%2520API%7C_____0">Overview</a>
+            <div class='secondary_nav_links'>
+                <a href='/api-sub-billing/Default.htm#api-sub/api-sub.htm%3FTocPath%3DSubscription%2520Management%2520and%2520Billing%2520API%7C_____0'>Overview</a>
             </div>
-            <div class="secondary_nav_links">
-               <a href="/api-sub-billing/Default.htm#api-sub/api-sub-bill-guides.htm%3FTocPath%3DGuides%7C_____0">Guides</a>
+            <div class='secondary_nav_links'>
+               <a href='/api-sub-billing/Default.htm#api-sub/api-sub-bill-guides.htm%3FTocPath%3DGuides%7C_____0'>Guides</a>
             </div>
-            <div class="secondary_nav_links api_reference">
-                <a href="/api/billing-subscription-management.html">API Reference</a>
-            </div>
-        </div>
-    </div>
-
-     <div class="checkout_secondary_nav">
-        <div class="secondary_nav" id="checkout_second_nav">
-            <div class="secondary_nav_bold_link">
-                <a href="/develop/useAppDirectAPI.html">API HELP</a>
-                <span class="black">&gt;</span>
-            </div>
-            <div class="secondary_nav_links">
-                <a href="/api-checkout/Default.htm#api-checkout/api-chck.htm%3FTocPath%3DCheckout%2520APIs%7C_____0">Overview</a>
-            </div>
-            <div class="secondary_nav_links">
-               <a href="/api-checkout/Default.htm#api-checkout/api-check-guides.htm%3FTocPath%3DGuides%7C_____0">Guides</a>
-            </div>
-            <div class="secondary_nav_links api_reference">
-                <a href="/api/checkout.html">API Reference</a>
+            <div class='secondary_nav_links api_reference'>
+                <a href='/api/billing-subscription-management.html'>API Reference</a>
             </div>
         </div>
     </div>
 
-    <div class="platform_secondary_nav">
-        <div class="secondary_nav" id="platform_second_nav">
-            <div class="secondary_nav_bold_link">
-                <a href="/develop/useAppDirectAPI.html">API HELP</a>
-                <span class="black">&gt;</span>
+     <div class='checkout_secondary_nav'>
+        <div class='secondary_nav' id='checkout_second_nav'>
+            <div class='secondary_nav_bold_link'>
+                <a href='/develop/useAppDirectAPI.html'>API HELP</a>
+                <span class='black'>&gt;</span>
             </div>
-            <div class="secondary_nav_links">
-                <a href="/api-platform/Default.htm#api-platform/api-plat.htm%3FTocPath%3DPlatform%2520Administration%2520API%7C_____0">Overview</a>
+            <div class='secondary_nav_links'>
+                <a href='/api-checkout/Default.htm#api-checkout/api-chck.htm%3FTocPath%3DCheckout%2520APIs%7C_____0'>Overview</a>
             </div>
-            <div class="secondary_nav_links">
-               <a href="/api-platform/Default.htm#api-platform/api-plat-guides.htm%3FTocPath%3D_____6">Guides</a>
+            <div class='secondary_nav_links'>
+               <a href='/api-checkout/Default.htm#api-checkout/api-check-guides.htm%3FTocPath%3DGuides%7C_____0'>Guides</a>
             </div>
-            <div class="secondary_nav_links api_reference">
-                <a href="/api/checkout.html">API Reference</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="catalog_secondary_nav">
-        <div class="secondary_nav" id="catalog_second_nav">
-            <div class="secondary_nav_bold_link">
-                <a href="/develop/useAppDirectAPI.html">API HELP</a>
-                <span class="black">&gt;</span>
-            </div>
-            <div class="secondary_nav_links">
-                <a href="/api-catalog/Default.htm#api-catalog/api-cat.htm%3FTocPath%3DCatalog%2520Management%2520API%7C_____0">Overview</a>
-            </div>
-            <div class="secondary_nav_links">
-               <a href="/api-catalog/Default.htm#api-catalog/api-cat-guides.htm%3FTocPath%3DGuides%7C_____0">Guides</a>
-            </div>
-            <div class="secondary_nav_links api_reference">
-                <a href="/api/catalog-management.html">API Reference</a>
+            <div class='secondary_nav_links api_reference'>
+                <a href='/api/checkout.html'>API Reference</a>
             </div>
         </div>
     </div>
 
-        <div class="assisted_secondary_nav">
-            <div class="secondary_nav" id="assisted_second_nav">
-                <div class="secondary_nav_bold_link">
-                   <a href="/develop/useAppDirectAPI.html">API HELP</a>
-                    <span class="black">&gt;</span>
+    <div class='platform_secondary_nav'>
+        <div class='secondary_nav' id='platform_second_nav'>
+            <div class='secondary_nav_bold_link'>
+                <a href='/develop/useAppDirectAPI.html'>API HELP</a>
+                <span class='black'>&gt;</span>
+            </div>
+            <div class='secondary_nav_links'>
+                <a href='/api-platform/Default.htm#api-platform/api-plat.htm%3FTocPath%3DPlatform%2520Administration%2520API%7C_____0'>Overview</a>
+            </div>
+            <div class='secondary_nav_links'>
+               <a href='/api-platform/Default.htm#api-platform/api-plat-guides.htm%3FTocPath%3D_____6'>Guides</a>
+            </div>
+            <div class='secondary_nav_links api_reference'>
+                <a href='/api/checkout.html'>API Reference</a>
+            </div>
+        </div>
+    </div>
+
+    <div class='catalog_secondary_nav'>
+        <div class='secondary_nav' id='catalog_second_nav'>
+            <div class='secondary_nav_bold_link'>
+                <a href='/develop/useAppDirectAPI.html'>API HELP</a>
+                <span class='black'>&gt;</span>
+            </div>
+            <div class='secondary_nav_links'>
+                <a href='/api-catalog/Default.htm#api-catalog/api-cat.htm%3FTocPath%3DCatalog%2520Management%2520API%7C_____0'>Overview</a>
+            </div>
+            <div class='secondary_nav_links'>
+               <a href='/api-catalog/Default.htm#api-catalog/api-cat-guides.htm%3FTocPath%3DGuides%7C_____0'>Guides</a>
+            </div>
+            <div class='secondary_nav_links api_reference'>
+                <a href='/api/catalog-management.html'>API Reference</a>
+            </div>
+        </div>
+    </div>
+
+        <div class='assisted_secondary_nav'>
+            <div class='secondary_nav' id='assisted_second_nav'>
+                <div class='secondary_nav_bold_link'>
+                   <a href='/develop/useAppDirectAPI.html'>API HELP</a>
+                    <span class='black'>&gt;</span>
                 </div>
-                <div class="secondary_nav_links">
-                    <a href="/api-assist/Default.htm#api-assist/api-asst.htm%3FTocPath%3DAssisted%2520Sales%2520API%7C_____0">Overview</a>
+                <div class='secondary_nav_links'>
+                    <a href='/api-assist/Default.htm#api-assist/api-asst.htm%3FTocPath%3DAssisted%2520Sales%2520API%7C_____0'>Overview</a>
                 </div>
-                <div class="secondary_nav_links">
-                   <a href="/api-assist/Default.htm#api-assist/api-assist-guides.htm%3FTocPath%3D_____6">Guides</a>
+                <div class='secondary_nav_links'>
+                   <a href='/api-assist/Default.htm#api-assist/api-assist-guides.htm%3FTocPath%3D_____6'>Guides</a>
                 </div>
-                <div class="secondary_nav_links api_reference">
-                    <a href="/api/assisted-sales.html">API Reference</a>
+                <div class='secondary_nav_links api_reference'>
+                    <a href='/api/assisted-sales.html'>API Reference</a>
                 </div>
             </div>
         </div>
 
-        <div class="reports_v1_secondary_nav">
-            <div class="secondary_nav" id="reports_v1_second_nav">
-                <div class="secondary_nav_bold_link">
-                    <a href="/develop/useAppDirectAPI.html">API HELP</a>
-                    <span class="black">&gt;</span>
+        <div class='reports_v1_secondary_nav'>
+            <div class='secondary_nav' id='reports_v1_second_nav'>
+                <div class='secondary_nav_bold_link'>
+                    <a href='/develop/useAppDirectAPI.html'>API HELP</a>
+                    <span class='black'>&gt;</span>
                 </div>
-                <div class="secondary_nav_links">
-                    <a href="/api-reportsv1/Default.htm#api-reports/api-rep.htm%3FTocPath%3DReports%2520API%2520v1%7C_____0">Overview</a>
+                <div class='secondary_nav_links'>
+                    <a href='/api-reportsv1/Default.htm#api-reports/api-rep.htm%3FTocPath%3DReports%2520API%2520v1%7C_____0'>Overview</a>
                 </div>
-                <div class="secondary_nav_links">
-                   <a href="/api-reportsv1/Default.htm#api-reports/api-reportsv1-guides.htm%3FTocPath%3D_____6">Guides</a>
+                <div class='secondary_nav_links'>
+                   <a href='/api-reportsv1/Default.htm#api-reports/api-reportsv1-guides.htm%3FTocPath%3D_____6'>Guides</a>
                 </div>
-                <div class="secondary_nav_links api_reference">
-                    <a href="/api/reports-v1.html">API Reference</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="reports_v2_secondary_nav">
-            <div class="secondary_nav" id="reports_v2_second_nav">
-                <div class="secondary_nav_bold_link">
-                    <a href="/develop/useAppDirectAPI.html">API HELP</a>
-                    <span class="black">&gt;</span>
-                </div>
-                <div class="secondary_nav_links">
-                    <a href="/api-reportsv2/Default.htm#api-reports/api-rep-v2.htm%3FTocPath%3D_____1">Overview</a>
-                </div>
-                <div class="secondary_nav_links">
-                   <a href="/api-reportsv2/Default.htm#api-reports/api-reportsv2-guides.htm%3FTocPath%3D_____6">Guides</a>
-                </div>
-                <div class="secondary_nav_links api_reference">
-                    <a href="/api/reports-v2.html">API Reference</a>
+                <div class='secondary_nav_links api_reference'>
+                    <a href='/api/reports-v1.html'>API Reference</a>
                 </div>
             </div>
         </div>
 
-        <div class="storefront_secondary_nav">
-            <div class="secondary_nav" id="storefront_second_nav">
-                <div class="secondary_nav_bold_link">
-                    <a href="/develop/useAppDirectAPI.html">API HELP</a>
-                    <span class="black">&gt;</span>
+        <div class='reports_v2_secondary_nav'>
+            <div class='secondary_nav' id='reports_v2_second_nav'>
+                <div class='secondary_nav_bold_link'>
+                    <a href='/develop/useAppDirectAPI.html'>API HELP</a>
+                    <span class='black'>&gt;</span>
                 </div>
-                <div class="secondary_nav_links">
-                    <a href="/api-storefront/Default.htm#api-storefront/api-storef.htm%3FTocPath%3DStorefront%2520API%7C_____0">Overview</a>
+                <div class='secondary_nav_links'>
+                    <a href='/api-reportsv2/Default.htm#api-reports/api-rep-v2.htm%3FTocPath%3D_____1'>Overview</a>
                 </div>
-                <div class="secondary_nav_links">
-                   <a href="/api-storefront/Default.htm#api-storefront/api-storefront-guides.htm%3FTocPath%3D_____6">Guides</a>
+                <div class='secondary_nav_links'>
+                   <a href='/api-reportsv2/Default.htm#api-reports/api-reportsv2-guides.htm%3FTocPath%3D_____6'>Guides</a>
                 </div>
-                <div class="secondary_nav_links api_reference">
-                    <a href="/api/storefront.html">API Reference</a>
+                <div class='secondary_nav_links api_reference'>
+                    <a href='/api/reports-v2.html'>API Reference</a>
                 </div>
             </div>
         </div>
 
-    <a href="/" id="nav-button">
+        <div class='storefront_secondary_nav'>
+            <div class='secondary_nav' id='storefront_second_nav'>
+                <div class='secondary_nav_bold_link'>
+                    <a href='/develop/useAppDirectAPI.html'>API HELP</a>
+                    <span class='black'>&gt;</span>
+                </div>
+                <div class='secondary_nav_links'>
+                    <a href='/api-storefront/Default.htm#api-storefront/api-storef.htm%3FTocPath%3DStorefront%2520API%7C_____0'>Overview</a>
+                </div>
+                <div class='secondary_nav_links'>
+                   <a href='/api-storefront/Default.htm#api-storefront/api-storefront-guides.htm%3FTocPath%3D_____6'>Guides</a>
+                </div>
+                <div class='secondary_nav_links api_reference'>
+                    <a href='/api/storefront.html'>API Reference</a>
+                </div>
+            </div>
+        </div>
+
+    <a href='/' id='nav-button'>
       <span>
         NAV
         <%= image_tag('navbar.png') %>
       </span> 
     </a>
-    <div class="toc-wrapper">
-      <div class ="logo"></div>
+    <div class='toc-wrapper'>
+      <div class ='logo'></div>
       <% if language_tabs.any? %>
-        <div class="lang-selector">
+        <div class='lang-selector'>
           <% language_tabs.each do |lang| %>
             <% if lang.is_a? Hash %>
-              <a href="%" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
+              <a href='%' data-language-name='<%= lang.keys.first %>'><%= lang.values.first %></a>
             <% else %>
-              <a href="%" data-language-name="<%= lang %>"><%= lang %></a>
+              <a href='%' data-language-name='<%= lang %>'><%= lang %></a>
             <% end %>
           <% end %>
         </div>
       <% end %>
       <% if current_page.data.search %>
-        <div class="search">
-            <input type="text" class="search input-search" placeholder="Search">
+        <div class='search'>
+            <input type='text' class='search input-search' placeholder='Search'>
         </div>
-        <ul class="search-results"></ul>
+        <ul class='search-results'></ul>
       <% end %>
-      <div id="toc" class="toc-list-h1">
+      <div id='toc' class='toc-list-h1'>
         <% toc_data(page_content).each do |h1| %>
-         <li class="nav-<%= h1[:id] %>">
-            <a href="#<%= h1[:id] %>" class="toc-h1 toc-link" data-title="<%= h1[:content] %>"><%= h1[:content] %></a>
+         <li class='nav-<%= h1[:id] %>'>
+            <a href='#<%= h1[:id] %>' class='toc-h1 toc-link' data-title='<%= h1[:content] %>'><%= h1[:content] %></a>
             <% if h1[:children].length > 0 %>
-              <ul class="toc-list-h2">
+              <ul class='toc-list-h2'>
                 <% h1[:children].each do |h2| %>
                   <li>
-                    <a href="#<%= h2[:id] %>" class="toc-h2 toc-link" data-title="<%= h1[:content] %>"><%= h2[:content] %></a>
+                    <a href='#<%= h2[:id] %>' class='toc-h2 toc-link' data-title='<%= h1[:content] %>'><%= h2[:content] %></a>
                   </li>
                 <% end %>
               </ul>
@@ -350,26 +350,26 @@ under the License.
         <% end %>
       </div>
       <% if current_page.data.toc_footers %>
-        <ul class="toc-footer">
+        <ul class='toc-footer'>
           <% current_page.data.toc_footers.each do |footer| %>
             <li><%= footer %></li>
           <% end %>
         </ul>
       <% end %>
     </div>
-    <div class="page-wrapper">
-      <div class="dark-box"></div>
-      <div class="content">
+    <div class='page-wrapper'>
+      <div class='dark-box'></div>
+      <div class='content'>
         <%= page_content %>
       </div>
-      <div class="dark-box">
+      <div class='dark-box'>
         <% if language_tabs.any? %>
-          <div class="lang-selector">
+          <div class='lang-selector'>
             <% language_tabs.each do |lang| %>
               <% if lang.is_a? Hash %>
-                <a href="%" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
+                <a href='%' data-language-name='<%= lang.keys.first %>'><%= lang.values.first %></a>
               <% else %>
-                <a href="%" data-language-name="<%= lang %>"><%= lang %></a>
+                <a href='%' data-language-name='<%= lang %>'><%= lang %></a>
               <% end %>
             <% end %>
           </div>
