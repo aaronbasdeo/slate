@@ -206,7 +206,7 @@ html, body {
 
 .header-links {
   text-decoration: none;
-  font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   font-size: 14px;
   color: #a2a2a2;
   height: 60px;
@@ -257,7 +257,7 @@ html, body {
   &-links {
     text-decoration: none;
     color: #a2a2a2 !important;
-    font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+    font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
     margin: 0;
     display: block;
     font-size: 14px;
@@ -344,7 +344,7 @@ input.input-search:focus {
 }
 
 .secondary_nav_bold_link {
-  font-family: "AauxNext-Bold-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Bold-Web", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   line-height: 56px;
   margin-right: 20px;
@@ -360,7 +360,7 @@ input.input-search:focus {
 }
 
 .secondary_nav_links a {
-  font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   text-decoration: none;
   color: #565656;
   opacity: 0.5;
@@ -1209,7 +1209,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .topic-title {
-  font-family: "AauxNext-Bold-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Bold-Web", Arial, Helvetica, sans-serif;
   margin-bottom: 0;
   font-size: 16px;
   color: #006080;
@@ -1224,7 +1224,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .search-title-append {
-  font-family: "AauxNext-Bold-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Bold-Web", Arial, Helvetica, sans-serif;
   margin-bottom: 2px;
   font-size: 26px;
   color: #006080;
@@ -1233,19 +1233,19 @@ input[type="checkbox"], input[type="radio"] {
 
 .search-filter-heading {
   margin: 0;
-  font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
 
 .product-filter-heading {
   margin: 0;
-  font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
 
 .sort-filter-heading {
   margin: 0;
-  font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
 
@@ -1262,18 +1262,18 @@ input[type="checkbox"], input[type="radio"] {
   flex-direction: column;
 }
 
-.outer-div{
+.outer-div {
   display: flex;
   justify-content: space-between;
 }
 
-.clear-all-filters{
+.clear-all-filters {
   padding-top: 25px;
   display: none;
   font-weight: bold;
   padding-right: 13px;
   cursor: pointer;
-  font-family: Arial,Helvetica,sans-serif; 
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .header-search-result {
@@ -1351,7 +1351,7 @@ li.sort-filter-options {
   font-weight: normal;
   letter-spacing: 0;
   padding-left: 3px;
-  font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   color: #a2a2a2;
   cursor: pointer;
 }
@@ -1366,7 +1366,7 @@ li.sort-filter-options {
   font-weight: normal;
   letter-spacing: 0;
   padding-left: 3px;
-  font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   color: #a2a2a2;
   cursor: pointer;
 }
@@ -1381,7 +1381,7 @@ li.sort-filter-options {
   font-weight: normal;
   letter-spacing: 0;
   padding-left: 3px;
-  font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+  font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   color: #a2a2a2;
   cursor: pointer;
 }
@@ -1402,7 +1402,7 @@ li.sort-filter-options {
 }
 
 .search-heading {
-  font: 2.4em/1.4em "AauxNext-Medium-Web",Arial,Helvetica,sans-serif;
+  font: 2.4em/1.4em "AauxNext-Medium-Web", Arial, Helvetica, sans-serif;
 }
 
 .search-filter input[type="radio"]:checked + label {
@@ -1436,7 +1436,7 @@ li.sort-filter-options {
   max-height: 70px;
   overflow: hidden;
   margin-top: 0;
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .no-result-message {
@@ -1605,7 +1605,7 @@ li.sort-filter-options {
 
 @media (max-width: 1073px) {
   .search-heading {
-    font: 1.2em/1.4em "AauxNext-Medium-Web",Arial,Helvetica,sans-serif;
+    font: 1.2em/1.4em "AauxNext-Medium-Web", Arial, Helvetica, sans-serif;
     margin-left: 20px;
   }
 
@@ -1645,19 +1645,18 @@ li.sort-filter-options {
     z-index: 1;
     padding-right: 20px;
     position: absolute;
-    font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+    font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
     font-weight: bold;
     cursor: pointer;
   }
 
-  .back-to-results
-  {
-    font-family: Arial,Helvetica,sans-serif;
+  .back-to-results {
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     cursor: pointer;
   }
 
-  .mobile-filters-outer-div{
+  .mobile-filters-outer-div {
     background-color: #fff;
     top: 0;
     padding-top: 70px;
@@ -1670,20 +1669,20 @@ li.sort-filter-options {
     justify-content: space-between;
   }
 
- .back-to-results a{
-    font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+  .back-to-results a {
+    font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
     color: rgb(86, 86, 86);
     padding-right: 5px;
   }
 
-  .clear-all-filters{
+  .clear-all-filters {
     display: none !important;
   }
 
-  .clear-all-filters-mobile{
+  .clear-all-filters-mobile {
     font-weight: bold;
     cursor: pointer;
-    font-family: Arial,Helvetica,sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
     display: none;
   }
 
@@ -1726,7 +1725,7 @@ li.sort-filter-options {
     letter-spacing: 0;
     padding-left: 3px;
     display: block;
-    font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+    font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
     color: #bfbfbf;
     padding-right: 5px;
     cursor: pointer;
@@ -1739,7 +1738,7 @@ li.sort-filter-options {
     display: block;
     letter-spacing: 0;
     padding-left: 3px;
-    font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+    font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
     color: #bfbfbf;
     padding-right: 5px;
     cursor: pointer;
@@ -1752,7 +1751,7 @@ li.sort-filter-options {
     display: block;
     letter-spacing: 0;
     padding-left: 3px;
-    font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+    font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
     color: #bfbfbf;
     padding-right: 5px;
     cursor: pointer;
@@ -1806,19 +1805,19 @@ li.sort-filter-options {
   .search-filter-heading {
     margin-top: 5px !important;
     font-size: 18px;
-    font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+    font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   }
 
   .product-filter-heading {
     margin-top: 10px !important;
     font-size: 18px;
-    font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+    font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   }
 
   .sort-filter-heading {
     margin-top: 10px !important;
     font-size: 18px;
-    font-family: "AauxNext-Regular-Web",Arial,Helvetica,sans-serif;
+    font-family: "AauxNext-Regular-Web", Arial, Helvetica, sans-serif;
   }
 
   .search-highlight {
@@ -2130,7 +2129,7 @@ li.sort-filter-options {
     display: none !important;
   }
 
-  .clear-all-filters-mobile{
+  .clear-all-filters-mobile {
     display: none !important;
   }
 }
