@@ -174,7 +174,7 @@
                 var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('reports_v1_second_nav').offsetHeight + 2;
 
             } else if ($('body').hasClass('reports-v2')) {
-                var scrollToPosition = 60 - 51 + 2;
+                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('reports_v2_second_nav').offsetHeight + 2;
 
             } else if ($('body').hasClass('storefront')) {
                 var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('storefront_second_nav').offsetHeight + 2;
