@@ -121,73 +121,128 @@
     /////////////////////////////////////////////////
 
     $(document).ready(function() {
-        var target;
-        var responsiveBreakPoint = 930;
+            var target;
+            var responsiveBreakPoint = 930;
 
-        window.onload = function(e) {
-            if ($(window).width() > responsiveBreakPoint) {
-                if ($('#toc a[href = "' + window.location.hash + '"]')) {
-                    target = window.location.hash;
-                    manageDesktopPageScroll();
+            window.onload = function(e) {
+                if ($(window).width() > responsiveBreakPoint) {
+                    if ($('#toc a[href = "' + window.location.hash + '"]')) {
+                        target = window.location.hash;
+                        manageDesktopPageScroll();
+                    }
+                } else {
+                    if ($('#toc a[href = "' + window.location.hash + '"]')) {
+                        target = window.location.hash;
+                        manageMobileAndTabletPageScroll();
+                    }
                 }
-            }
-        };
+            };
 
-        $('a[href*="#"]').on('click', function(e) {
-            if ($(window).width() > responsiveBreakPoint) {
-                target = $(this).attr('href'); //Get the target
-                manageDesktopPageScroll();
-                e.preventDefault();
-            }
-        });
-
-        $('.search').change(function() {
-            $('.search-results').find('a[href*="#"]').on('click', function(e) {
+            $('a[href*="#"]').on('click', function(e) {
                 if ($(window).width() > responsiveBreakPoint) {
                     target = $(this).attr('href'); //Get the target
                     manageDesktopPageScroll();
                     e.preventDefault();
+                } else {
+                    target = $(this).attr('href'); //Get the target
+                    manageMobileAndTabletPageScroll();
+                    e.preventDefault();
                 }
             });
-        });
 
-        function manageDesktopPageScroll() {
-            if ($('body').hasClass('iam')) {
-                var scrollToPosition = $(target).offset().top - 60 - 51 + 2;
+            $('.search').change(function() {
+                $('.search-results').find('a[href*="#"]').on('click', function(e) {
+                    if ($(window).width() > responsiveBreakPoint) {
+                        target = $(this).attr('href'); //Get the target
+                        manageDesktopPageScroll();
+                        e.preventDefault();
+                    } else {
+                        target = $(this).attr('href'); //Get the target
+                        manageMobileAndTabletPageScroll();
+                        e.preventDefault();
+                    }
+                });
+            });
 
-            } else if ($('body').hasClass('billing-subscription-management')) {
-                var scrollToPosition = $(target).offset().top - 60 - 51 + 2;
+            function manageDesktopPageScroll() {
+                if ($('body').hasClass('iam')) {
+                    var scrollToPosition = $(target).offset().top - 60 - 51 + 2;
 
-            } else if ($('body').hasClass('checkout')) {
-                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('checkout_second_nav').offsetHeight + 2;
+                } else if ($('body').hasClass('billing-subscription-management')) {
+                    var scrollToPosition = $(target).offset().top - 60 - 51 + 2;
 
-            } else if ($('body').hasClass('platform-admin')) {
-                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('platform_second_nav').offsetHeight + 2;
+                } else if ($('body').hasClass('checkout')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('checkout_second_nav').offsetHeight + 2;
 
-            } else if ($('body').hasClass('catalog-management')) {
-                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('catalog_second_nav').offsetHeight + 2;
+                } else if ($('body').hasClass('platform-admin')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('platform_second_nav').offsetHeight + 2;
 
-            } else if ($('body').hasClass('assisted-sales')) {
-                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('assisted_second_nav').offsetHeight + 2;
+                } else if ($('body').hasClass('catalog-management')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('catalog_second_nav').offsetHeight + 2;
 
-            } else if ($('body').hasClass('reports-v1')) {
-                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('reports_v1_second_nav').offsetHeight + 2;
+                } else if ($('body').hasClass('assisted-sales')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('assisted_second_nav').offsetHeight + 2;
 
-            } else if ($('body').hasClass('reports-v2')) {
-                var scrollToPosition = 60 - 51 + 2;
+                } else if ($('body').hasClass('reports-v1')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('reports_v1_second_nav').offsetHeight + 2;
 
-            } else if ($('body').hasClass('storefront')) {
-                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('storefront_second_nav').offsetHeight + 2;
+                } else if ($('body').hasClass('reports-v2')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('reports_v2_second_nav').offsetHeight + 2;
 
-            } else {
-                var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - 51 + 2;
+                } else if ($('body').hasClass('storefront')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - document.getElementById('storefront_second_nav').offsetHeight + 2;
+
+                } else {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight - 51 + 2;
+
+                }
+                $('html,body').animate({
+                        'scrollTop': scrollToPosition
+                    }, 0, function(target) {
+                        window.location.hash = target;
+                    }
+                );
             }
 
-            $('html,body').animate({
-                'scrollTop': scrollToPosition
-            }, 0, function(target) {
-                window.location.hash = target;
-            });
+            function manageMobileAndTabletPageScroll() {
+                if ($('body').hasClass('iam')) {
+                    var scrollToPosition = $(target).offset().top - 60 + 2;
+
+                } else if ($('body').hasClass('billing-subscription-management')) {
+                    var scrollToPosition = $(target).offset().top - 60 + 2;
+
+                } else if ($('body').hasClass('checkout')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight + 2;
+
+                } else if ($('body').hasClass('platform-admin')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight + 2;
+
+                } else if ($('body').hasClass('catalog-management')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight + 2;
+
+                } else if ($('body').hasClass('assisted-sales')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight + 2;
+
+                } else if ($('body').hasClass('reports-v1')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight + 2;
+
+                } else if ($('body').hasClass('reports-v2')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight + 2;
+
+                } else if ($('body').hasClass('storefront')) {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight + 2;
+
+                } else {
+                    var scrollToPosition = $(target).offset().top - document.getElementById('header').offsetHeight + 2;
+
+                }
+                $('html,body').animate({
+                        'scrollTop': scrollToPosition
+                    }, 0, function(target) {
+                        window.location.hash = target;
+                    }
+                );
+            }
         }
-    });
+    );
 })();
