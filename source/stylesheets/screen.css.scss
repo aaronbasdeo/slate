@@ -2517,3 +2517,15 @@ li.sort-filter-options {
 #st-2 .st-btn:hover > svg {
   margin-left: 0 !important;
 }
+
+a.toc-h1.toc-link:hover {
+  overflow: visible;
+  white-space: normal;
+  height: auto;
+}
+
+a.toc-h2.toc-link:hover {
+  overflow: visible;
+  white-space: normal;
+  height: auto;
+}
