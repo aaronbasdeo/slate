@@ -38,10 +38,20 @@ under the License.
     <% else %>
       <%= javascript_include_tag  'all_nosearch' %>
     <% end %>
+
+   <!----------------------------- Local JS Scripts ------------------------------->
+
   <script defer type='text/javascript' src='./javascripts/redirect.js'></script>
   <script defer type='text/javascript' src='./javascripts/header.js'></script>
-  <script defer type='text/javascript' src='//https://platform-api.sharethis.com/js/sharethis.js#property=5a5c5a8c72b70f00137efecc&product=sticky-share-buttons'>
-  </script>
+
+	<!----------------------------- Share-this Script ------------------------------->
+
+    <script defer='defer' type='text/javascript'
+			src='//platform-api.sharethis.com/js/sharethis.js#property=5a5c5a8c72b70f00137efecc&product=sticky-share-buttons'>
+    </script>
+
+  	<!----------------------------- Heap Script ------------------------------->
+
  	<script defer type='text/javascript'>
  		window.heap = window.heap || [], heap.load = function(e, t) {
              window.heap.appid = e, window.heap.config = t = t || {};
@@ -63,6 +73,26 @@ under the License.
          };
          heap.load('169561623');
  	</script>
+
+ 	<!----------------------------- Walkme Script ------------------------------->
+
+    <script defer='defer' type='text/javascript'>
+        (function() {
+            var walkme = document.createElement('script');
+            walkme.type = 'text/javascript';
+            walkme.async = true;
+            walkme.src =
+                'https://cdn.walkme.com/users/7d99ba68b982471c851b1260868b2859/walkme_7d99ba68b982471c851b1260868b2859_https.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(walkme, s);
+            window._walkmeConfig = {
+                smartLoad: true
+            };
+        })();
+    </script>
+
+ 	 <!----------------------------- Google-Analytics Script ------------------------------->
+
 	<script async src='https://www.googletagmanager.com/gtag/js?id=UA-19401247-68'></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -73,8 +103,8 @@ under the License.
       gtag('config', 'UA-19401247-68');
 	</script>
   </head>
+
   <body class='<%= page_classes %>' data-languages='<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>'>
-    
     <div id = 'load'>
        <div class='load_div'>
          <div class='loading_text'>
@@ -91,36 +121,59 @@ under the License.
         <ul class='primary-header-left-ul'>
             <li class='primary-header-left-ul-li logo-li'>
                <a href='http://dev-help2.appdirect.com/'>
-               <img src='images/appdirect-mark.png' class='appdirect_dark_logo'>
-               <img src='images/appdirect-mark-light.png' class='appdirect_light_logo display_none'>
+               <img src='images/appdirect-mark.png'
+                    class='appdirect_dark_logo'
+                    alt='appdirect-dark-logo'>
+               <img src='images/appdirect-mark-light.png'
+                    class='appdirect_light_logo display_none'
+                    alt='appdirect-light-logo'>
                </a>
             </li>
-            <li id='hide_subnav' class='primary-header-left-ul-li subnav-li both-side-border'><a id='userguidelink_id' class='header-links userguidelink'>Docs</a>
+            <li id='hide_subnav'
+                class='primary-header-left-ul-li subnav-li both-side-border'>
+                    <a id='userguidelink_id' class='header-links userguidelink'>
+                        Docs
+                    </a>
                   <ul class='subnav display_none'>
-                    <li><a class='subnav-links' href='/platform/manageThePlatform.html'>Platform</a>
+                    <li>
+                        <a class='subnav-links' href='/platform/manageThePlatform.html' target='_blank'>Platform</a>
                     </li>
-                    <li><a class='subnav-links' href='/reseller/appreseller.html'>Resellers</a>
+                    <li>
+                        <a class='subnav-links' href='/reseller/appreseller.html' target='_blank'>Resellers</a>
                     </li>
-                    <li><a class='subnav-links' href='/products/createAndManageProducts.html'>Products</a>
+                    <li>
+                        <a class='subnav-links' href='/products/createAndManageProducts.html' target='_blank'>Products</a>
                     </li>
-                    <li><a class='subnav-links' href='/develop/useAppDirectAPI.html'>APIs</a>
+                    <li>
+                        <a class='subnav-links' href='/develop/useAppDirectAPI.html' target='_blank'>APIs</a>
                     </li>
                   </ul>
             </li>
         </ul>
           <div class='search-bar container-search'>
                 <a href='javascript:void(0)' id='search_menu'>
-                    <img id ='search_image' class='search_image' src='./images/magnifying_glass.png'>
-                </a></li>
-                <input style='margin-top: 0; width: 380px;' autocomplete='off' id='search-val' class='header-search-result search-bar-width' placeholder='Search Documentation Center' type='text'/>
+                    <img id ='search_image'
+                         class='search_image'
+                         src='./images/magnifying_glass.png'
+                         al='search'>
+                </a>
+                <input style='margin-top: 0; width: 380px;'
+                       autocomplete='off'
+                       id='search-val'
+                       class='header-search-result search-bar-width'
+                       placeholder='Search Documentation Center'
+                       type='text'/>
         </div>
         <div class='header-right-div'>
-          <a href='javascript:void(0)' id='hide_menu' style='height: 40px;'>&#9776;</a></li>
+          <a href='javascript:void(0)'
+              id='hide_menu'
+              style='height: 40px;'>
+              &#9776;
+          </a>
           <ul class='primary-header-right-ul display_none_mobile_view'>
-               <li class='primary-header-right-ul-li both-side-border top-down-border training-li'>
-             <a class='header-links training' href='/training/training.html'>Training</a>
-            </li>
-
+              <li class='primary-header-right-ul-li both-side-border top-down-border training-li'>
+                <a class='header-links training' href='/training/training.html'>Training</a>
+              </li>
             <li class='primary-header-right-ul-li both-side-border  top-down-border helpsupport-li'>
                <a class='header-links helpsupport' href='https://docs.appdirect.com/help-support/overview'>Help & Support</a>
             </li>
