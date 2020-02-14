@@ -135,22 +135,6 @@ document.onreadystatechange = function() {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
-    /////////// Walkme Script to take user feedback about API pages
-    //////////////////////////////////////////////////////////////////////////////////////////////
-
-    (function() {
-            var walkme = document.createElement('script');
-            walkme.type = 'text/javascript';
-            walkme.async = true;
-            walkme.src = 'https://cdn.walkme.com/users/7d99ba68b982471c851b1260868b2859/walkme_7d99ba68b982471c851b1260868b2859_https.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(walkme, s);
-            window._walkmeConfig = { smartLoad: true };
-        }
-    )();
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
     /////////// Heap Analytics Script to track the number of users accessing the API pages
     //////////////////////////////////////////////////////////////////////////////////////////////
 
