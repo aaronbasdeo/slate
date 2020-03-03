@@ -150,132 +150,130 @@
 </div>
 
 <div class='search-wrapper'>
-  <div class='outer-div'>
-    <span class='search-heading'> </span>
-    <span class='clear-all-filters'>Clear All Filters</span>
-  </div>
-  <div class='search-results'>
-      <div class='show-filters'>
-          <span>Filter</span>
-      </div>
-      <div class='search-result-title'>  
-      </div>
-      <div class='mobile-filters'>
-         <div class='mobile-filters-outer-div'>
-             <span class='back-to-results'>
-                 <a>< </a>
-                 Back to Results
-             </span>
-          <span class='clear-all-filters-mobile'>Clear All Filters</span>
-      </div>
-      <div class='search-filter-mobile'>
-          <h4 class='search-filter-heading'> Content Type </h4>
-        <li class='search-filter-options'>
-            <input class='index_All' id='All_Mobile' name='index_mobile' type='radio'>
-            <label for='All_Mobile'>All</label>
-        </li>
-        <li class='search-filter-options'>
-            <input class='index_api' name='index_mobile' type='radio' id='API_Mobile'>
-            <label for='API_Mobile'>API</label>
-        </li>
-        <li class='search-filter-options'>
-            <input class='index_documentation' name='index_mobile' type='radio' id='Documentation_Mobile'>
-            <label for='Documentation_Mobile'>Documentation</label>
-        </li>
-    </div>
-        <div class='product-filter-mobile'>
-          <h4 class='product-filter-heading'>Product</h4>
-          <li class='product-filter-options'>
-               <input class='index_appmarket' name='product' type='checkbox' id='AppMarket_Mobile'>
-               <label for='AppMarket_Mobile'>AppMarket</label>
-          </li>
-          <li class='product-filter-options'>
-               <input class='index_appbilling' name='product' type='checkbox' id='AppBilling_Mobile'>
-               <label for='AppBilling_Mobile'>AppBilling</label>
-          </li>
-          <li class='product-filter-options'>
-               <input class='index_appdistribution' name='product' type='checkbox' id='AppDistribution_Mobile'>
-               <label for='AppDistribution_Mobile'>AppDistribution</label>
-          </li>
-          <li class='product-filter-options'>
-               <input class='index_appreseller' name='product' type='checkbox' id='AppReseller_Mobile'>
-               <label for='AppReseller_Mobile'>AppReseller</label>
-          </li>
-          <li class='product-filter-options'>
-               <input class='index_appinsights' name='product' type='checkbox' id='AppInsights_Mobile'>
-               <label for='AppInsights_Mobile'>AppInsights</label>
-          </li>
-          <li class='product-filter-options'>
-               <input class='index_appwise' name='product' type='checkbox' id='AppWise_Mobile'>
-               <label for='AppWise_Mobile'>AppWise</label>
+		<div class='outer-div'>
+			<span class='search-heading'> </span>
+			<span class='clear-all-filters'>Clear All Filters</span>
+		</div>
+		<div class='search-results'>
+			<div class='show-filters'>
+				<span>Filter</span>
+			</div>
+			<div class='search-result-title'>
+			</div>
+			<div class='mobile-filters'>
+				<div class='mobile-filters-outer-div'>
+					<span class='back-to-results'>
+						<a>< </a>
+						Back to Results
+					</span>
+					<span class='clear-all-filters-mobile'>
+						Clear All Filters
+					</span>
+				</div>
+				<div class='search-filter-mobile'>
+                <h4 class='search-filter-heading'> Content Type </h4>
+                <ul class='search-filter-list'>
+                    <li class='search-filter-options'>
+                        <input class='index_all' id='all_Mobile' name='index_mobile' type='radio'>
+                        <label for='all_Mobile'>All</label>
+                    </li>
+	                <!-- We might come back to this based on the feedback -->
+	                <!--<li class='search-filter-options'>
+						<input class='index_api' name='index_mobile' type='radio' id='api_reference_mobile'>
+						<label class='index_api_label' for='api_reference_mobile'>API Reference</label>
+						</li>
+						 <li class='search-filter-options'>
+						<input class='index_guides' name='index_mobile' type='radio' id='guides_mobile'>
+						<label class='index_guides_label' for='guides_mobile'>Guides</label>
+					</li>-->
+                </ul>
+            </div>
+            <div class='product-filter-mobile'>
+                <h4 class='product-filter-heading'>Category</h4>
+                <li class='product-filter-options'>
+                    <input class='index_platform' name='category' type='checkbox' id='platform_mobile'>
+                    <label for='platform_mobile'>Platform Management</label>
+                </li>
+                <li class='product-filter-options'>
+                    <input class='index_product' name='category' type='checkbox' id='product_mobile'>
+                    <label for='product_mobile'>Product Development</label>
+                </li>
+                <li class='product-filter-options'>
+                    <input class='index_reseller' name='category' type='checkbox' id='reseller_mobile'>
+                    <label for='reseller_mobile'>Reseller Management</label>
+                </li>
+                <li class='product-filter-options'>
+                    <input class='index_api_guides' name='category' type='checkbox' id='api_guides_mobile'>
+                    <label for='api_guides_mobile'>API Guides</label>
+                </li>
+                <li class='product-filter-options'>
+                    <input class='index_api_flare' name='category' type='checkbox' id='api_flare_mobile'>
+                    <label for='api_flare_mobile'>API Reference</label>
+                </li>
+            </div>
+            <div class='sort-filter-mobile'>
+                <h4 class='sort-filter-heading'>Sort By Date</h4>
+                <li class='sort-filter-options'>
+                    <input class='index_new' name='index_date_mobile' type='radio' id='New_Mobile'>
+                    <label for='New_Mobile'>Newest First</label>
+                </li>
+                <li class='sort-filter-options'>
+                    <input class='index_old' name='index_date_mobile' type='radio' id='Old_Mobile'>
+                    <label for='Old_Mobile'>Oldest First</label>
+                </li>
+            </div>
         </div>
-          <div class='sort-filter-mobile'>
-            <h4 class='sort-filter-heading'>Sort By Date</h4>
-          <li class='sort-filter-options'>
-              <input class='index_new' name='index_date_mobile' type='radio' id='New_Mobile'>
-              <label for='New_Mobile'>Newest First</label>
-          </li>
-          <li class='sort-filter-options'>
-              <input class='index_old' name='index_date_mobile' type='radio' id='Old_Mobile'>
-              <label for='Old_Mobile'>Oldest First</label>
-          </li>
+        <div class='filters'>
+            <div class='search-filter'>
+                <h4 class='search-filter-heading'>Content Type</h4>
+                <li class='search-filter-options'>
+                    <input class='index_all' name='index' type='radio' id='all'>
+                    <label for='all'>All</label>
+                </li>
+                <li class='search-filter-options'>
+                    <input class='index_api' name='index' type='radio' id='api_reference'>
+                    <label class='index_api_label' for='api_reference'>API Reference</label>
+                </li>
+                <li class='search-filter-options'>
+                    <input class='index_guides' name='index' type='radio' id='guides'>
+                    <label class='index_guides_label' for='guides'>Guides</label>
+                </li>
+            </div>
+            <div class='product-filter'>
+                <h4 class='product-filter-heading'>Category</h4>
+                <li class='product-filter-options'>
+                    <input class='index_platform' name='category' type='checkbox' id='platform'>
+                    <label for='platform'>Platform Management</label>
+                </li>
+                <li class='product-filter-options'>
+                    <input class='index_product' name='category' type='checkbox' id='product'>
+                    <label for='product'>Product Development</label>
+                </li>
+                <li class='product-filter-options'>
+                    <input class='index_reseller' name='category' type='checkbox' id='reseller'>
+                    <label for='reseller'>Reseller Management</label>
+                </li>
+                <li class='product-filter-options'>
+                    <input class='index_api_guides' name='category' type='checkbox' id='api_guides'>
+                    <label for='api_guides'>API Guides</label>
+                </li>
+                <li class='product-filter-options'>
+                    <input class='index_api_flare' name='category' type='checkbox' id='api_flare'>
+                    <label for='api_flare'>API Reference</label>
+                </li>
+            </div>
+            <div class='sort-filter'>
+                <h4 class='sort-filter-heading'>Sort By Date</h4>
+                <li class='sort-filter-options'>
+                    <input class='index_new' name='index_date' type='radio' id='New'>
+                    <label for='New'>Newest First</label>
+                </li>
+                <li class='sort-filter-options'>
+                    <input class='index_old' name='index_date' type='radio' id='Old'>
+                    <label for='Old'>Oldest First</label>
+                </li>
+            </div>
         </div>
-  </div>
-  <div class='filters'>
-      <div class='search-filter'>
-            <h4 class='search-filter-heading'>Content Type</h4>
-          <li class='search-filter-options'>
-              <input class='index_All' name='index' type='radio' id='All'>
-              <label for='All'>All</label>
-          </li>
-          <li class='search-filter-options'>
-              <input class='index_api' name='index' type='radio' id='API'>
-              <label for='API'>API</label>
-          </li>
-          <li class='search-filter-options'>
-              <input class='index_documentation' name='index' type='radio' id='Documentation'>
-              <label for='Documentation'>Documentation</label>
-          </li>
-          </div>
-        <div class='product-filter'>
-            <h4 class='product-filter-heading'>Product</h4>
-          <li class='product-filter-options'>
-               <input class='index_appmarket' name='product' type='checkbox' id='AppMarket'>
-               <label for='AppMarket'>AppMarket</label>
-          </li>
-          <li class='product-filter-options'>
-               <input class='index_appbilling' name='product' type='checkbox' id='AppBilling'>
-               <label for='AppBilling'>AppBilling</label>
-          </li>
-          <li class='product-filter-options'>
-               <input class='index_appdistribution' name='product' type='checkbox' id='AppDistribution'>
-               <label for='AppDistribution'>AppDistribution</label>
-          </li>
-          <li class='product-filter-options'>
-               <input class='index_appreseller' name='product' type='checkbox' id='AppReseller'>
-               <label for='AppReseller'>AppReseller</label>
-          </li>
-          <li class='product-filter-options'>
-               <input class='index_appinsights' name='product' type='checkbox' id='AppInsights'>
-               <label for='AppInsights'>AppInsights</label>
-          </li>
-          <li class='product-filter-options'>
-               <input class='index_appwise' name='product' type='checkbox' id='AppWise'>
-               <label for='AppWise'>AppWise</label>
-          </li>
-       </div>
-        <div class='sort-filter'>
-            <h4 class='sort-filter-heading'>Sort By Date</h4>
-          <li class='sort-filter-options'>
-              <input class='index_new' name='index_date' type='radio' id='New'>
-              <label for='New'>Newest First</label>
-          </li>
-          <li class='sort-filter-options'>
-              <input class='index_old' name='index_date' type='radio' id='Old'>
-              <label for='Old'>Oldest First</label>
-          </li>
-        </div>
-     </div>
     </div>
 </div>
 

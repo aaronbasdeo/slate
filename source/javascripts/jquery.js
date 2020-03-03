@@ -565,8 +565,8 @@
                     // Make sure the incoming data is actual JSON
                     // Logic borrowed from http://json.org/json2.js
                     if (rvalidchars.test(data.replace(rvalidescape, '@')
-                        .replace(rvalidtokens, ']')
-                        .replace(rvalidbraces, ''))) {
+                    .replace(rvalidtokens, ']')
+                    .replace(rvalidbraces, ''))) {
 
                         return (new Function('return ' + data))();
                     }
@@ -3234,9 +3234,9 @@
                                     var returned = fn && fn.apply(this, arguments);
                                     if (returned && jQuery.isFunction(returned.promise)) {
                                         returned.promise()
-                                            .done(newDefer.resolve)
-                                            .fail(newDefer.reject)
-                                            .progress(newDefer.notify);
+                                        .done(newDefer.resolve)
+                                        .fail(newDefer.reject)
+                                        .progress(newDefer.notify);
                                     } else {
                                         newDefer[action + 'With'](this === promise ? newDefer.promise() : this, fn ? [returned] : arguments);
                                     }
@@ -3329,9 +3329,9 @@
                 for (; i < length; i++) {
                     if (resolveValues[i] && jQuery.isFunction(resolveValues[i].promise)) {
                         resolveValues[i].promise()
-                            .done(updateFunc(i, resolveContexts, resolveValues))
-                            .fail(deferred.reject)
-                            .progress(updateFunc(i, progressContexts, progressValues));
+                        .done(updateFunc(i, resolveContexts, resolveValues))
+                        .fail(deferred.reject)
+                        .progress(updateFunc(i, progressContexts, progressValues));
                     } else {
                         --remaining;
                     }
@@ -5122,7 +5122,7 @@
                         event.data = handleObj.data;
 
                         ret = ((jQuery.event.special[handleObj.origType] || {}).handle || handleObj.handler)
-                            .apply(matched.elem, args);
+                        .apply(matched.elem, args);
 
                         if (ret !== undefined) {
                             if ((event.result = ret) === false) {
@@ -7306,7 +7306,7 @@
                 // Use the already-created iframe if possible
                 iframe = (iframe ||
                     jQuery('<iframe frameborder=\'0\' width=\'0\' height=\'0\'/>')
-                        .css('cssText', 'display:block !important')
+                    .css('cssText', 'display:block !important')
                 ).appendTo(doc.documentElement);
 
                 // Always write a new HTML skeleton so Webkit and Firefox don't choke on reuse
@@ -7499,24 +7499,24 @@
                 var elements = jQuery.prop(this, 'elements');
                 return elements ? jQuery.makeArray(elements) : this;
             })
-                .filter(function() {
-                    var type = this.type;
-                    // Use .is(":disabled") so that fieldset[disabled] works
-                    return this.name && !jQuery(this).is(':disabled') &&
-                        rsubmittable.test(this.nodeName) && !rsubmitterTypes.test(type) &&
-                        (this.checked || !manipulation_rcheckableType.test(type));
-                })
-                .map(function(i, elem) {
-                    var val = jQuery(this).val();
+            .filter(function() {
+                var type = this.type;
+                // Use .is(":disabled") so that fieldset[disabled] works
+                return this.name && !jQuery(this).is(':disabled') &&
+                    rsubmittable.test(this.nodeName) && !rsubmitterTypes.test(type) &&
+                    (this.checked || !manipulation_rcheckableType.test(type));
+            })
+            .map(function(i, elem) {
+                var val = jQuery(this).val();
 
-                    return val == null ?
-                        null :
-                        jQuery.isArray(val) ?
-                            jQuery.map(val, function(val) {
-                                return { name: elem.name, value: val.replace(rCRLF, '\r\n') };
-                            }) :
-                            { name: elem.name, value: val.replace(rCRLF, '\r\n') };
-                }).get();
+                return val == null ?
+                    null :
+                    jQuery.isArray(val) ?
+                        jQuery.map(val, function(val) {
+                            return { name: elem.name, value: val.replace(rCRLF, '\r\n') };
+                        }) :
+                        { name: elem.name, value: val.replace(rCRLF, '\r\n') };
+            }).get();
         }
     });
 
@@ -9027,9 +9027,9 @@
 
         // attach callbacks from options
         return animation.progress(animation.opts.progress)
-            .done(animation.opts.done, animation.opts.complete)
-            .fail(animation.opts.fail)
-            .always(animation.opts.always);
+        .done(animation.opts.done, animation.opts.complete)
+        .fail(animation.opts.fail)
+        .always(animation.opts.always);
     }
 
     function propFilter(props, specialEasing) {
@@ -9335,7 +9335,7 @@
             return this.filter(isHidden).css('opacity', 0).show()
 
             // animate to the value specified
-                .end().animate({ opacity: to }, speed, easing, callback);
+            .end().animate({ opacity: to }, speed, easing, callback);
         },
         animate: function(prop, speed, easing, callback) {
             var empty = jQuery.isEmptyObject(prop),

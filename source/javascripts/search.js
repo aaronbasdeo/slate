@@ -6,10 +6,10 @@ $(document).ready(function() {
         var searchClass = $('.search-result-title');
         var responsiveBreakPoint = 1073;
         var radio_Click = {
-            all: false, api: false, documentation: false
+            all: false, api_reference: false, guides: false
         };
         var checkbox_Click = {
-            market: false, billing: false, distribution: false, reseller: false, insights: false, wise: false
+            products: false, platform: false, reseller: false, api_guides: false, api_flare: false
         };
         var sort_Click = {
             new: false, old: false
@@ -31,7 +31,7 @@ $(document).ready(function() {
         function searchOnPageLoad(query) {
             $('#search-val').attr('value', query);
             var input = query;
-            var api = 'https://appwise.appdirect.com/api/v2/marketplaces/marketplace.appdirect.com/index/search?format=json&q=';
+            var api = 'https://appwise-test.appdirect.com/api/v2/marketplaces/testmarketplace.appdirect.com/index/search?format=json&q';
             var url = api + input + '&page_size=1000&marketplace_sections=DOCUMENTATION';
 
             var index = input.indexOf('sort:');
@@ -57,7 +57,7 @@ $(document).ready(function() {
             $('.search-result-title').empty();
             $('.search-image').css('display', 'block');
             $('.mobile-filters, .search-results').css('display', 'none');
-            $('.index_All').prop('checked', true);
+            $('.index_all').prop('checked', true);
 
             $.getJSON(url, function(data) {
                 if (data.response.docs.length > 0) {
@@ -66,7 +66,7 @@ $(document).ready(function() {
                         var title = data.response.docs[i].title;
                         var trimedTitle = getTrimedTitles(title);
                         var getUrl = data.response.docs[i].url;
-                        var desc = data.response.docs[i].description.replace(new RegExp('\r?\n', 'g'), '<br />');
+                        var desc = data.response.docs[i].description;
 
                         checkForHTMLTags(getUrl, trimedTitle, desc); // Check for the HTML tags in the string. If present parse them so that it won't break the whole script.
                         container = data.response.docs;
@@ -90,77 +90,68 @@ $(document).ready(function() {
 
                     if (localStorage.getItem('radio') === 'all') {
                         radioClicked = 1;
-                        $('.index_All').prop('checked', true);
+                        $('.index_all').prop('checked', true);
                         setTrueForCurrentCheck('all');
                         showContentFilterResult();
                         backToSearchResults();
                     }
-                    if (localStorage.getItem('radio') === 'api') {
+                    if (localStorage.getItem('radio') === 'api_reference') {
                         radioClicked = 1;
                         $('.index_api').prop('checked', true);
-                        setTrueForCurrentCheck('api');
+                        setTrueForCurrentCheck('api_reference');
                         showContentFilterResult();
                         backToSearchResults();
                     }
-                    if (localStorage.getItem('radio') === 'documentation') {
+                    if (localStorage.getItem('radio') === 'guides') {
                         radioClicked = 1;
-                        $('.index_documentation').prop('checked', true);
-                        setTrueForCurrentCheck('documentation');
+                        $('.index_guides').prop('checked', true);
+                        setTrueForCurrentCheck('guides');
                         showContentFilterResult();
                         backToSearchResults();
                     }
-                    if (localStorage.getItem('checkbox_market') === 'market') {
+                    if (localStorage.getItem('checkbox_product') === 'products') {
                         if ($(window).width() > responsiveBreakPoint) {
-                            $('#AppMarket').prop('checked', true);
+                            $('#product').prop('checked', true);
                         } else {
-                            $('#AppMarket_Mobile').prop('checked', true);
+                            $('#product_mobile').prop('checked', true);
                         }
-                        checkbox_Click['market'] = true;
+                        checkbox_Click['products'] = true;
                         showProductFilterResult();
                     }
-                    if (localStorage.getItem('checkbox_billing') === 'billing') {
+                    if (localStorage.getItem('checkbox_platform') === 'platform') {
                         if ($(window).width() > responsiveBreakPoint) {
-                            $('#AppBilling').prop('checked', true);
+                            $('#platform').prop('checked', true);
                         } else {
-                            $('#AppBilling_Mobile').prop('checked', true);
+                            $('#platform_Mobile').prop('checked', true);
                         }
-                        checkbox_Click['billing'] = true;
-                        showProductFilterResult();
-                    }
-                    if (localStorage.getItem('checkbox_distribution') === 'distribution') {
-                        if ($(window).width() > responsiveBreakPoint) {
-                            $('#AppDistribution').prop('checked', true);
-                        } else {
-                            $('#AppDistribution_Mobile').prop('checked', true);
-                        }
-                        checkbox_Click['distribution'] = true;
+                        checkbox_Click['platform'] = true;
                         showProductFilterResult();
                     }
                     if (localStorage.getItem('checkbox_reseller') === 'reseller') {
                         if ($(window).width() > responsiveBreakPoint) {
-                            $('#AppReseller').prop('checked', true);
+                            $('#reseller').prop('checked', true);
                         } else {
-                            $('#AppReseller_Mobile').prop('checked', true);
+                            $('#reseller_Mobile').prop('checked', true);
                         }
                         checkbox_Click['reseller'] = true;
                         showProductFilterResult();
                     }
-                    if (localStorage.getItem('checkbox_insights') === 'insights') {
+                    if (localStorage.getItem('checkbox_api_guides') === 'api_guides') {
                         if ($(window).width() > responsiveBreakPoint) {
-                            $('#AppInsights').prop('checked', true);
+                            $('#api_guides').prop('checked', true);
                         } else {
-                            $('#AppInsights_Mobile').prop('checked', true);
+                            $('#api_guides_mobile').prop('checked', true);
                         }
-                        checkbox_Click['insights'] = true;
+                        checkbox_Click['api_guides'] = true;
                         showProductFilterResult();
                     }
-                    if (localStorage.getItem('checkbox_wise') === 'wise') {
+                    if (localStorage.getItem('checkbox_api_flare') === 'api_flare') {
                         if ($(window).width() > responsiveBreakPoint) {
-                            $('#AppWise').prop('checked', true);
+                            $('#api_flare').prop('checked', true);
                         } else {
-                            $('#AppWise_Mobile').prop('checked', true);
+                            $('#api_flare_mobile').prop('checked', true);
                         }
-                        checkbox_Click['wise'] = true;
+                        checkbox_Click['api_flare'] = true;
                         showProductFilterResult();
                     }
                 }
@@ -184,7 +175,18 @@ $(document).ready(function() {
             if (title === undefined) {
                 searchClass.append('<p class=\'no-result-message\'>No filtered results found for ' + '\'' + input + '\'' + '</p>');
             }
-            if (title.includes('AppWise API Reference') || title.includes('AppInsights API Reference') || title.includes('AppMarket API Reference') || title.includes('AppBilling API Reference') || title.includes('AppReseller API Reference')) {
+            if (title.includes('AppWise API Reference')
+                || title.includes('AppInsights API Reference')
+                || title.includes('Identity and Access Management API Reference')
+                || title.includes('Checkout API Reference')
+                || title.includes('Storefront API Reference')
+                || title.includes('Reports v1 API Reference')
+                || title.includes('Reports v2 API Reference')
+                || title.includes('Subscription Management and Billing API Reference')
+                || title.includes('Storefront API Reference')
+                || title.includes('Catalog Management API Reference')
+                || title.includes('Platform Administration API Reference')
+                || title.includes('Assisted Sales API Reference')) {
                 title = trimApiTitles(title);
             }
             return title;
@@ -252,7 +254,7 @@ $(document).ready(function() {
                     var title = container[i].title;
                     var trimedTitle = getTrimedTitles(title, input);
                     var getUrl = container[i].url;
-                    var desc = container[i].description.replace(new RegExp('\r?\n', 'g'), '<br />');
+                    var desc = container[i].description;
 
                     checkForHTMLTags(getUrl, trimedTitle, desc); // Check for the HTML tags in the string. If present parse them so that it won't break the whole script.
                     noResultFoundCheck = 1;
@@ -267,13 +269,13 @@ $(document).ready(function() {
                     var title = container[i].title;
                     var trimedTitle = getTrimedTitles(title, input);
                     var getUrl = container[i].url;
-                    var desc = container[i].description.replace(new RegExp('\r?\n', 'g'), '<br />');
+                    var desc = container[i].description;
 
-                    if (getUrl.indexOf('/api/') >= 0 && radio_Click['api'] === true) {
+                    if (getUrl.indexOf('/api/') >= 0 && radio_Click['api_reference'] === true) {
                         checkForHTMLTags(getUrl, trimedTitle, desc); // Check for the HTML tags in the string. If present parse them so that it won't break the whole script.
                         noResultFoundCheck = 1;
 
-                    } else if (getUrl.indexOf('/api/') === -1 && radio_Click['documentation'] === true) {
+                    } else if (getUrl.indexOf('/api/') === -1 && radio_Click['guides'] === true) {
                         checkForHTMLTags(getUrl, trimedTitle, desc); // Check for the HTML tags in the string. If present parse them so that it won't break the whole script.
                         noResultFoundCheck = 1;
                     }
@@ -283,7 +285,7 @@ $(document).ready(function() {
             if (noResultFoundCheck === 0) {
                 searchClass.append('<p class=\'no-result-message\'>No filtered results found for ' + '\'' + input + '\'' + '</p>');
             }
-            if ($('[name=\'product\']:checked').length) {
+            if ($('[name=\'category\']:checked').length) {
                 showProductFilterResult();
             }
         }
@@ -299,7 +301,7 @@ $(document).ready(function() {
             });
         }
 
-        $('.index_All').click(function() {
+        $('.index_all').click(function() {
             radioClicked = 1;
             setTrueForCurrentCheck('all');
             showContentFilterResult();
@@ -308,14 +310,14 @@ $(document).ready(function() {
 
         $('.index_api').click(function() {
             radioClicked = 1;
-            setTrueForCurrentCheck('api');
+            setTrueForCurrentCheck('api_reference');
             showContentFilterResult();
             backToSearchResults();
         });
 
-        $('.index_documentation').click(function() {
+        $('.index_guides').click(function() {
             radioClicked = 1;
-            setTrueForCurrentCheck('documentation');
+            setTrueForCurrentCheck('guides');
             showContentFilterResult();
             backToSearchResults();
         });
@@ -331,112 +333,133 @@ $(document).ready(function() {
                 var title = container[i].title;
                 var trimedTitle = getTrimedTitles(title, input);
                 var getUrl = container[i].url;
-                var desc = container[i].description.replace(new RegExp('\r?\n', 'g'), '<br />');
+                var desc = container[i].description;
 
                 if (desc.includes('<') && desc.includes('>')) {
                     var parsedInputWithHTML = parseHtmlEntities(desc);
                     desc = parsedInputWithHTML;
                 }
 
-                if ((getUrl.indexOf('/appmarket/') >= 0 || (getUrl.indexOf('/appmarket.html') >= 0 && (!$('.index_documentation').is(':checked')))) && checkbox_Click['market'] === true && (!$('.index_api').is(':checked'))) {
-                    showResultToUser(getUrl, trimedTitle, desc);
-                    noResultFoundCheck = 1;
-                } else if (getUrl.indexOf('/appmarket.html') >= 0 && checkbox_Click['market'] === true && ($('.index_api').is(':checked'))) {
-                    showResultToUser(getUrl, trimedTitle, desc);
-                    noResultFoundCheck = 1;
-                } else if ((getUrl.indexOf('/appbilling/') >= 0 || (getUrl.indexOf('/appbilling.html') >= 0 && (!$('.index_documentation').is(':checked')))) && checkbox_Click['billing'] === true && (!$('.index_api').is(':checked'))) {
-                    showResultToUser(getUrl, trimedTitle, desc);
-                    noResultFoundCheck = 1;
-                } else if (getUrl.indexOf('/appbilling.html') >= 0 && checkbox_Click['billing'] === true && ($('.index_api').is(':checked'))) {
-                    showResultToUser(getUrl, trimedTitle, desc);
-                    noResultFoundCheck = 1;
-                } else if (getUrl.indexOf('/appdistrib/') >= 0 && checkbox_Click['distribution'] === true && (!$('.index_api').is(':checked'))) {
-                    showResultToUser(getUrl, trimedTitle, desc);
-                    noResultFoundCheck = 1;
-                } else if ((getUrl.indexOf('/appreseller/') >= 0 || (getUrl.indexOf('/appreseller.html') >= 0 && (!$('.index_documentation').is(':checked')))) && checkbox_Click['reseller'] === true && (!$('.index_api').is(':checked'))) {
-                    showResultToUser(getUrl, trimedTitle, desc);
-                    noResultFoundCheck = 1;
-                } else if (getUrl.indexOf('/appreseller.html') >= 0 && checkbox_Click['reseller'] === true && ($('.index_api').is(':checked'))) {
-                    showResultToUser(getUrl, trimedTitle, desc);
-                    noResultFoundCheck = 1;
-                } else if (getUrl.indexOf('/appinsights.html') >= 0 && checkbox_Click['insights'] === true && (!$('.index_documentation').is(':checked'))) {
-                    showResultToUser(getUrl, trimedTitle, desc);
-                    noResultFoundCheck = 1;
-                } else if (getUrl.indexOf('/appwise.html') >= 0 && checkbox_Click['wise'] === true && (!$('.index_documentation').is(':checked'))) {
-                    showResultToUser(getUrl, trimedTitle, desc);
-                    noResultFoundCheck = 1;
+                switch (true) {
+                    case (getUrl.indexOf('/products/') >= 0 && (checkbox_Click['products'] === true || $('.index_product').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/platform/') >= 0 && (checkbox_Click['platform'] === true || $('.index_platform').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/reseller/') >= 0 && (checkbox_Click['reseller'] === true || $('.index_reseller').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/api-sub-billing/') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/api-assist/') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/api-platform/') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/api-storefront/') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/api-iam/') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/api-checkout/') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/api-reports-v1') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/api-reports-v2') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/api-catalog') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
+                    case (getUrl.indexOf('/api/') >= 0 && (checkbox_Click['api_flare'] === true || $('.index_api_flare').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
                 }
             }
-            if (noResultFoundCheck === 0) {
-                searchClass.append('<p class=\'no-result-message\'>No filtered results found for ' + '\'' + input + '\'' + '</p>');
-            }
-
             highlightKeyword(input);
 
-            if (checkbox_Click['market'] === false && (checkbox_Click['billing'] === false) && (checkbox_Click['distribution'] === false) && (checkbox_Click['reseller'] === false) && (checkbox_Click['insights'] === false) && (checkbox_Click['wise']) === false) {
+            if ((checkbox_Click['platform'] === false) && (checkbox_Click['products'] === false) && (checkbox_Click['reseller'] === false) && (checkbox_Click['api_guides'] === false) && (checkbox_Click['api_flare'] === false)) {
                 if (radioClicked === 0) {
                     radio_Click['all'] = true;
                 }
                 showContentFilterResult();
             }
+            if (noResultFoundCheck === 0) {
+                searchClass.append('<p class=\'no-result-message\'>No filtered results found for ' + '\'' + input + '\'' + '</p>');
+            }
         }
 
-        $('.index_appmarket').click(function() {
-            checkbox_Click['market'] = !checkbox_Click['market'];
-            if ($('.index_appmarket').is(':checked') === true) {
-                localStorage.setItem('checkbox_market', 'market');
+        $('.index_platform').click(function() {
+            checkbox_Click['platform'] = !checkbox_Click['platform'];
+            if ($('.index_platform').is(':checked') === true) {
+                localStorage.setItem('checkbox_platform', 'platform');
             } else {
-                localStorage.setItem('checkbox_market', ' ');
+                localStorage.setItem('checkbox_platform', ' ');
+                $('.index_platform').prop('checked', false);
+
             }
             showProductFilterResult();
         });
 
-        $('.index_appbilling').click(function() {
-            checkbox_Click['billing'] = !checkbox_Click['billing'];
-            if ($('.index_appbilling').is(':checked') === true) {
-                localStorage.setItem('checkbox_billing', 'billing');
+        $('.index_product').click(function() {
+            checkbox_Click['products'] = !checkbox_Click['products'];
+            if ($('.index_product').is(':checked') === true) {
+                localStorage.setItem('checkbox_product', 'products');
             } else {
-                localStorage.setItem('checkbox_billing', ' ');
+                localStorage.setItem('checkbox_product', ' ');
+                $('.index_product').prop('checked', false);
             }
             showProductFilterResult();
         });
 
-        $('.index_appdistribution').click(function() {
-            checkbox_Click['distribution'] = !checkbox_Click['distribution'];
-            if ($('.index_appdistribution').is(':checked') === true) {
-                localStorage.setItem('checkbox_distribution', 'distribution');
-            } else {
-                localStorage.setItem('checkbox_distribution', ' ');
-            }
-            showProductFilterResult();
-        });
-
-        $('.index_appreseller').click(function() {
+        $('.index_reseller').click(function() {
             checkbox_Click['reseller'] = !checkbox_Click['reseller'];
-            if ($('.index_appreseller').is(':checked') === true) {
+            if ($('.index_reseller').is(':checked') === true) {
                 localStorage.setItem('checkbox_reseller', 'reseller');
             } else {
                 localStorage.setItem('checkbox_reseller', ' ');
+                $('.index_reseller').prop('checked', false);
             }
             showProductFilterResult();
         });
 
-        $('.index_appinsights').click(function() {
-            checkbox_Click['insights'] = !checkbox_Click['insights'];
-            if ($('.index_appinsights').is(':checked') === true) {
-                localStorage.setItem('checkbox_insights', 'insights');
+        $('.index_api_guides').click(function() {
+            checkbox_Click['api_guides'] = !checkbox_Click['api_guides'];
+            if ($('.index_api_guides').is(':checked') === true) {
+                localStorage.setItem('checkbox_api_guides', 'api_guides');
             } else {
-                localStorage.setItem('checkbox_insights', ' ');
+                localStorage.setItem('checkbox_api_guides', ' ');
+                $('.index_api_guides').prop('checked', false);
             }
             showProductFilterResult();
         });
 
-        $('.index_appwise').click(function() {
-            checkbox_Click['wise'] = !checkbox_Click['wise'];
-            if ($('.index_appwise').is(':checked') === true) {
-                localStorage.setItem('checkbox_wise', 'wise');
+        $('.index_api_flare').click(function() {
+            checkbox_Click['api_flare'] = !checkbox_Click['api_flare'];
+            if ($('.index_api_flare').is(':checked') === true) {
+                localStorage.setItem('checkbox_api_flare', 'api_flare');
             } else {
-                localStorage.setItem('checkbox_wise', ' ');
+                localStorage.setItem('checkbox_api_flare', ' ');
+                $('.index_api_flare').prop('checked', false);
             }
             showProductFilterResult();
         });
@@ -485,28 +508,75 @@ $(document).ready(function() {
         });
 
         function filterTitleBaseOnUrl(getUrl) {
-            if (getUrl.indexOf('/appmarket/') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppMarket Online Help</p>');
-            } else if (getUrl.indexOf('/appbilling/') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppBilling Online Help</p>');
-            } else if (getUrl.indexOf('/appdistrib/') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppDistribution Online Help</p>');
-            } else if (getUrl.indexOf('/appreseller/') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppReseller Online Help</p>');
-            } else if (getUrl.indexOf('/appwise/') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppWise Online Help</p>');
-            } else if (getUrl.indexOf('/appinsights/') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppInsights Online Help</p>');
-            } else if (getUrl.indexOf('/api/appmarket.html') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppMarket API Reference</p>');
-            } else if (getUrl.indexOf('/api/appbilling.html') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppBilling API Reference</p>');
-            } else if (getUrl.indexOf('/api/appreseller.html') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppReseller API Reference</p>');
-            } else if (getUrl.indexOf('/api/appinsights.html') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppInsights API Reference</p>');
-            } else if (getUrl.indexOf('/api/appwise.html') >= 0) {
-                searchClass.append('<p class=\'topic-title\'>AppWise API Reference</p>');
+            switch (true) {
+                case (getUrl.indexOf('/products/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Product Development Help</p>');
+                    break;
+                case (getUrl.indexOf('/platform/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Platform Management Help</p>');
+                    break;
+                case (getUrl.indexOf('/reseller/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Reseller Management Help</p>');
+                    break;
+                case (getUrl.indexOf('/api-sub-billing/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Billing API Guides</p>');
+                    break;
+                case (getUrl.indexOf('/api-assist/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Assisted Sales API Guides</p>');
+                    break;
+                case (getUrl.indexOf('/api-platform/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Platform Administration API Guides</p>');
+                    break;
+                case (getUrl.indexOf('/api-storefront/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Storefront API Guides</p>');
+                    break;
+                case (getUrl.indexOf('/api-iam/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Identity and Access Management API Guides</p>');
+                    break;
+                case (getUrl.indexOf('/api-checkout/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Checkout API Guides</p>');
+                    break;
+                case (getUrl.indexOf('/api-reportsv1/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Reports v1 API Guides</p>');
+                    break;
+                case (getUrl.indexOf('/api-reportsv2/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Reports v2 API Guides</p>');
+                    break;
+                case (getUrl.indexOf('/api-catalog/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Catalog Management API Guides</p>');
+                    break;
+                case (getUrl.indexOf('/api/appinsights.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>AppInsights API Reference</p>');
+                    break;
+                case (getUrl.indexOf('/api/appwise.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>AppWise API Reference</p>');
+                    break;
+                case (getUrl.indexOf('/api/iam.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Identity and Access Management API Reference</p>');
+                    break;
+                case (getUrl.indexOf('/api/checkout.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Checkout API Reference</p>');
+                    break;
+                case (getUrl.indexOf('/api/storefront.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Storefront API Reference</p>');
+                    break;
+                case (getUrl.indexOf('/api/reports-v1.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Reports v1 API Reference</p>');
+                    break;
+                case (getUrl.indexOf('/api/reports-v2.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Reports v2 API Reference</p>');
+                    break;
+                case (getUrl.indexOf('/api/billing-subscription-management.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Billing API Reference</p>');
+                    break;
+                case (getUrl.indexOf('/api/assisted-sales.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Assisted Sales API Reference</p>');
+                    break;
+                case (getUrl.indexOf('/api/platform-admin.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Platform Administration API Reference</p>');
+                    break;
+                case (getUrl.indexOf('/api/catalog-management.html') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Catalog Management API Reference</p>');
             }
         }
 
@@ -521,7 +591,7 @@ $(document).ready(function() {
 
             $('.search-highlight').mark(input, {
                 'element': 'span',
-                'className': 'highlight-search'
+                'className': 'highlight'
             });
         }
 

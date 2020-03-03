@@ -3367,9 +3367,9 @@
                                     var returned = fn && fn.apply(this, arguments);
                                     if (returned && jQuery.isFunction(returned.promise)) {
                                         returned.promise()
-                                            .progress(newDefer.notify)
-                                            .done(newDefer.resolve)
-                                            .fail(newDefer.reject);
+                                        .progress(newDefer.notify)
+                                        .done(newDefer.resolve)
+                                        .fail(newDefer.reject);
                                     } else {
                                         newDefer[tuple[0] + 'With'](
                                             this === promise ? newDefer.promise() : this,
@@ -3469,9 +3469,9 @@
                 for (; i < length; i++) {
                     if (resolveValues[i] && jQuery.isFunction(resolveValues[i].promise)) {
                         resolveValues[i].promise()
-                            .progress(updateFunc(i, progressContexts, progressValues))
-                            .done(updateFunc(i, resolveContexts, resolveValues))
-                            .fail(deferred.reject);
+                        .progress(updateFunc(i, progressContexts, progressValues))
+                        .done(updateFunc(i, resolveContexts, resolveValues))
+                        .fail(deferred.reject);
                     } else {
                         --remaining;
                     }
@@ -5620,7 +5620,7 @@
 
                 // Use the already-created iframe if possible
                 iframe = (iframe || jQuery('<iframe frameborder=\'0\' width=\'0\' height=\'0\'/>'))
-                    .appendTo(doc.documentElement);
+                .appendTo(doc.documentElement);
 
                 // Always write a new HTML skeleton so Webkit and Firefox don't choke on reuse
                 doc = iframe[0].contentDocument;
@@ -6798,9 +6798,9 @@
 
         // attach callbacks from options
         return animation.progress(animation.opts.progress)
-            .done(animation.opts.done, animation.opts.complete)
-            .fail(animation.opts.fail)
-            .always(animation.opts.always);
+        .done(animation.opts.done, animation.opts.complete)
+        .fail(animation.opts.fail)
+        .always(animation.opts.always);
     }
 
     jQuery.Animation = jQuery.extend(Animation, {
@@ -6882,7 +6882,7 @@
             return this.filter(isHidden).css('opacity', 0).show()
 
             // Animate to the value specified
-                .end().animate({ opacity: to }, speed, easing, callback);
+            .end().animate({ opacity: to }, speed, easing, callback);
         },
         animate: function(prop, speed, easing, callback) {
             var empty = jQuery.isEmptyObject(prop),
@@ -7514,7 +7514,7 @@
             while ((elem = this[i++])) {
                 if (elem.nodeType === 1 &&
                     (' ' + getClass(elem) + ' ').replace(rclass, ' ')
-                        .indexOf(className) > -1
+                    .indexOf(className) > -1
                 ) {
                     return true;
                 }
@@ -8488,7 +8488,7 @@
             // Handle falsy url in the settings object (#10093: consistency with old signature)
             // We also use the url parameter if available
             s.url = ((url || s.url || location.href) + '').replace(rhash, '')
-                .replace(rprotocol, location.protocol + '//');
+            .replace(rprotocol, location.protocol + '//');
 
             // Alias method option to type as per ticket #12004
             s.type = options.method || options.type || s.method || s.type;
@@ -8999,25 +8999,25 @@
                 var elements = jQuery.prop(this, 'elements');
                 return elements ? jQuery.makeArray(elements) : this;
             })
-                .filter(function() {
-                    var type = this.type;
+            .filter(function() {
+                var type = this.type;
 
-                    // Use .is( ":disabled" ) so that fieldset[disabled] works
-                    return this.name && !jQuery(this).is(':disabled') &&
-                        rsubmittable.test(this.nodeName) && !rsubmitterTypes.test(type) &&
-                        (this.checked || !rcheckableType.test(type));
-                })
-                .map(function(i, elem) {
-                    var val = jQuery(this).val();
+                // Use .is( ":disabled" ) so that fieldset[disabled] works
+                return this.name && !jQuery(this).is(':disabled') &&
+                    rsubmittable.test(this.nodeName) && !rsubmitterTypes.test(type) &&
+                    (this.checked || !rcheckableType.test(type));
+            })
+            .map(function(i, elem) {
+                var val = jQuery(this).val();
 
-                    return val == null ?
-                        null :
-                        jQuery.isArray(val) ?
-                            jQuery.map(val, function(val) {
-                                return { name: elem.name, value: val.replace(rCRLF, '\r\n') };
-                            }) :
-                            { name: elem.name, value: val.replace(rCRLF, '\r\n') };
-                }).get();
+                return val == null ?
+                    null :
+                    jQuery.isArray(val) ?
+                        jQuery.map(val, function(val) {
+                            return { name: elem.name, value: val.replace(rCRLF, '\r\n') };
+                        }) :
+                        { name: elem.name, value: val.replace(rCRLF, '\r\n') };
+            }).get();
         }
     });
 
@@ -9266,7 +9266,7 @@
                     'url' :
                     typeof s.data === 'string' &&
                     (s.contentType || '')
-                        .indexOf('application/x-www-form-urlencoded') === 0 &&
+                    .indexOf('application/x-www-form-urlencoded') === 0 &&
                     rjsonp.test(s.data) && 'data'
             );
 
