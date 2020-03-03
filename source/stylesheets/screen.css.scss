@@ -1397,7 +1397,7 @@ input[type="checkbox"], input[type="radio"] {
   }
 
 .search-wrapper {
-  max-width   : 1074px;
+  max-width   : 1124px;
   margin      : auto;
   padding-top : 70px;
   min-height  : 450px;
@@ -2537,3 +2537,31 @@ a.toc-h2.toc-link:hover {
   background-position : center !important;
   padding             : 4px 7px !important;
   }
+
+.index_guides {
+  display : none;
+  }
+
+.index_api {
+  display : none;
+  }
+
+.index_api_label {
+  display : none;
+  }
+
+.index_guides_label {
+  display : none;
+  }
+
+.search-filter-list {
+  list-style : none;
+  padding    : 0;
+  margin     : 0;
+  }
+
+.search-filter-list:nth-child(1) {
+  display : none;
+  border  : 0;
+  }
+
