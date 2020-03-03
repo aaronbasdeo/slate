@@ -105,6 +105,7 @@ $(document).ready(function() {
             $('.appdirect_light_logo').css('display', 'block');
 
         });
+
         $('.logo-li').mouseout(function() {
 
             $('.appdirect_dark_logo').css('display', 'block');
