@@ -6,10 +6,16 @@ $(document).ready(function() {
         var searchClass = $('.search-result-title');
         var responsiveBreakPoint = 1073;
         var radio_Click = {
-            all: false, api_reference: false, guides: false
+            all: false,
+            api_reference: false,
+            guides: false
         };
         var checkbox_Click = {
-            products: false, platform: false, reseller: false, api_guides: false, api_flare: false
+            products: false,
+            platform: false,
+            reseller: false,
+            api_guides: false,
+            api_flare: false
         };
         var sort_Click = {
             new: false, old: false
@@ -31,7 +37,7 @@ $(document).ready(function() {
         function searchOnPageLoad(query) {
             $('#search-val').attr('value', query);
             var input = query;
-            var api = 'https://appwise-test.appdirect.com/api/v2/marketplaces/testmarketplace.appdirect.com/index/search?format=json&q';
+            var api = 'https://appwise-test.appdirect.com/api/v2/marketplaces/testmarketplace.appdirect.com/index/search?format=json&q=';
             var url = api + input + '&page_size=1000&marketplace_sections=DOCUMENTATION';
 
             var index = input.indexOf('sort:');
@@ -122,7 +128,7 @@ $(document).ready(function() {
                         if ($(window).width() > responsiveBreakPoint) {
                             $('#platform').prop('checked', true);
                         } else {
-                            $('#platform_Mobile').prop('checked', true);
+                            $('#platform_mobile').prop('checked', true);
                         }
                         checkbox_Click['platform'] = true;
                         showProductFilterResult();
@@ -131,7 +137,7 @@ $(document).ready(function() {
                         if ($(window).width() > responsiveBreakPoint) {
                             $('#reseller').prop('checked', true);
                         } else {
-                            $('#reseller_Mobile').prop('checked', true);
+                            $('#reseller_mobile').prop('checked', true);
                         }
                         checkbox_Click['reseller'] = true;
                         showProductFilterResult();
@@ -389,6 +395,10 @@ $(document).ready(function() {
                         showResultToUser(getUrl, trimedTitle, desc);
                         noResultFoundCheck = 1;
                         break;
+                    case (getUrl.indexOf('/develop/') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
                     case (getUrl.indexOf('/api/') >= 0 && (checkbox_Click['api_flare'] === true || $('.index_api_flare').is(':checked'))):
                         showResultToUser(getUrl, trimedTitle, desc);
                         noResultFoundCheck = 1;
@@ -518,6 +528,9 @@ $(document).ready(function() {
                 case (getUrl.indexOf('/reseller/') >= 0):
                     searchClass.append('<p class=\'topic-title\'>Reseller Management Help</p>');
                     break;
+                case (getUrl.indexOf('/develop/') >= 0):
+                    searchClass.append('<p class=\'topic-title\'>Additional Integrations Options</p>');
+                    break;
                 case (getUrl.indexOf('/api-sub-billing/') >= 0):
                     searchClass.append('<p class=\'topic-title\'>Billing API Guides</p>');
                     break;
@@ -591,7 +604,7 @@ $(document).ready(function() {
 
             $('.search-highlight').mark(input, {
                 'element': 'span',
-                'className': 'highlight'
+                'className': 'highlight-search'
             });
         }
 
