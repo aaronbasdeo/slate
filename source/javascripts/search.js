@@ -359,6 +359,10 @@ $(document).ready(function() {
                         showResultToUser(getUrl, trimedTitle, desc);
                         noResultFoundCheck = 1;
                         break;
+                    case (getUrl.indexOf('/develop/') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
+                        showResultToUser(getUrl, trimedTitle, desc);
+                        noResultFoundCheck = 1;
+                        break;
                     case (getUrl.indexOf('/api-sub-billing/') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
                         showResultToUser(getUrl, trimedTitle, desc);
                         noResultFoundCheck = 1;
@@ -395,10 +399,6 @@ $(document).ready(function() {
                         showResultToUser(getUrl, trimedTitle, desc);
                         noResultFoundCheck = 1;
                         break;
-                    case (getUrl.indexOf('/develop/') >= 0 && (checkbox_Click['api_guides'] === true || $('.index_api_guides').is(':checked'))):
-                        showResultToUser(getUrl, trimedTitle, desc);
-                        noResultFoundCheck = 1;
-                        break;
                     case (getUrl.indexOf('/api/') >= 0 && (checkbox_Click['api_flare'] === true || $('.index_api_flare').is(':checked'))):
                         showResultToUser(getUrl, trimedTitle, desc);
                         noResultFoundCheck = 1;
@@ -407,9 +407,14 @@ $(document).ready(function() {
             }
             highlightKeyword(input);
 
-            if ((checkbox_Click['platform'] === false) && (checkbox_Click['products'] === false) && (checkbox_Click['reseller'] === false) && (checkbox_Click['api_guides'] === false) && (checkbox_Click['api_flare'] === false)) {
+            if ((checkbox_Click['platform'] === false)
+                && (checkbox_Click['products'] === false)
+                && (checkbox_Click['reseller'] === false)
+                && (checkbox_Click['api_guides'] === false)
+                && (checkbox_Click['api_flare'] === false)) {
                 if (radioClicked === 0) {
                     radio_Click['all'] = true;
+                    noResultFoundCheck = 1;
                 }
                 showContentFilterResult();
             }
