@@ -823,6 +823,94 @@ span.black {
 	}
   }
 
+.appwise {
+  & .toc-link {
+	background-color : #009ABF;
+	}
+
+  & .toc-wrapper {
+	background-color : #009ABF;
+	}
+
+  & input.input-search {
+	background-color : #009ABF !important;
+	}
+
+  & .search-results {
+	background-color : #009ABF !important;
+	}
+
+  & .toc-link.active {
+	background-color : #115B75 !important;
+	}
+
+  & .toc-link.active-parent {
+	background-color : #115B75 !important;
+	}
+
+  & .toc-footer li {
+	background-color : #009ABF;
+	}
+
+  & .logo {
+	display     : none;
+	padding     : 18px;
+	padding-top : 58px;
+	margin      : auto;
+	width       : 90px;
+	height      : inherit;
+	background  : url("../images/AppReseller.svg") center no-repeat;
+	}
+
+  & .appwise_secondary_nav {
+	display : block;
+	}
+  }
+
+.appinsights {
+  & .toc-link {
+	background-color : #009ABF;
+	}
+
+  & .toc-wrapper {
+	background-color : #009ABF;
+	}
+
+  & input.input-search {
+	background-color : #009ABF !important;
+	}
+
+  & .search-results {
+	background-color : #009ABF !important;
+	}
+
+  & .toc-link.active {
+	background-color : #115B75 !important;
+	}
+
+  & .toc-link.active-parent {
+	background-color : #115B75 !important;
+	}
+
+  & .toc-footer li {
+	background-color : #009ABF;
+	}
+
+  & .logo {
+	display     : none;
+	padding     : 18px;
+	padding-top : 58px;
+	margin      : auto;
+	width       : 90px;
+	height      : inherit;
+	background  : url("../images/AppReseller.svg") center no-repeat;
+	}
+
+  & .appinsights_secondary_nav {
+	display : block;
+	}
+  }
+
 .toc-wrapper {
   transition       : left 0.3s ease-in-out;
   overflow-y       : auto;
